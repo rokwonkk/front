@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+        목록:list
+
+        ul: unordered(순서없는) list
+        ol: ordered(순서있는) list
+-->
+<!-- style type 기입 안하게 되면 disc가 디폴트 -->
+<ul>
+    <li>coffee</li>
+    <li>tea</li>
+    <li>soda</li>
+</ul>
+
+<ul style="list-style-type: disc;">
+    <li>coffee</li>
+    <li>tea</li>
+    <li>soda</li>
+</ul>
+
+<ul style="list-style-type: square;">
+    <li>coffee</li>
+    <li>tea</li>
+    <li>soda</li>
+</ul>
+
+<ul style="list-style-type: circle;">
+    <li>coffee</li>
+    <li>tea</li>
+    <li>soda</li>
+</ul>
+
+<ul style="list-style-type: none;">
+    <li>coffee</li>
+    <li>tea</li>
+    <li>soda</li>
+</ul>
+
+<br/>
+
+<!-- ordered list -->
+<ol>
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+</ol>
+
+<ol type="1"> <!-- html4 4에서는 타입을 바꿔도 무조건 1로 시작됨-->
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+</ol>
+
+<ol start="5"> <!-- html5 5에서는 start로 시작값을 변경이 가능-->
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+</ol>
+
+<ol type="A"> <!-- html4 4에서는 타입을 바꿔도 무조건 1로 시작됨-->
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+</ol>
+
+<ol type="a"> <!-- html4 4에서는 타입을 바꿔도 무조건 1로 시작됨-->
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+</ol>
+
+<ol type="I"> <!-- html4 4에서는 타입을 바꿔도 무조건 1로 시작됨-->
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+    <li>커피</li>
+    <li>차</li>
+    <li>음료수</li>
+</ol>
+
+<ul>
+    <li>커피
+        <ol type="1">
+            <li>black</li>
+            <li>milk</li>
+        </ol>
+    </li>
+    <li>차</li>
+    <li>음료수
+        <ol type="a">
+            <li>콜라</li>
+            <li>사이다</li>
+        </ol>
+    </li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- table : 게시판 column(열), row(행) -->
+
+<div align="center">
+<table border="1">
+    <!-- 테이블 위에 붙어있는 제목 html5에 생김 -->
+    <caption>학생명단</caption>
+    <col width="50">
+    <col width="100">
+    <col width="70">
+    <col width="100">
+    <!-- thead, tbody는 생략가능 장점 : f12에서 폼으로 볼때 가독성조흠 -->
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>신장</th>
+            <th>전화번호</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>1</th>
+            <td>홍길동</td>
+            <td>24</td>
+            <td>172.3</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>성춘향</td>
+            <td>16</td>
+            <td>161.3</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>일지매</td>
+            <td>28</td>
+            <td>181.2</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<br/><br/>
+
+<!-- column을 합침 -->
+<div align="center">
+    <caption>column을 합침</caption>
+    <table border="1" style="width: 50%">
+        <thead>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>신장</th>
+            <th colspan="3">전화번호</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>홍길동</td>
+            <td>24</td>
+            <td>172.3</td>
+            <td>123-4567</td>
+            <td>222-3333</td>
+            <td>1111-1111</td>
+        </tr>
+        <tr>
+            <td>성춘향</td>
+            <td>16</td>
+            <td>156.7</td>
+            <td>898-7654</td>
+            <td>1111-4444</td>
+            <td>2222-2222</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<br/><br/>
+
+<!-- row 합침 -->
+<div align="center">
+    <table border="1">
+        <caption>row 합침</caption>
+        <col width="100">
+        <col width="100">
+        <tbody>
+        <tr>
+            <th>번호</th>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td>홍길동</td>
+        </tr>
+        <tr>
+            <th rowspan="2">전화번호</th>
+            <td>1111-2222</td>
+        </tr>
+        <tr>
+            <td>1111-2222</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--resource(자원) : button, input, calendar,slider-->
+
+<!--link : 목적 -> move-->
+<a href="http://zum.com">ZUM으로 이동</a>
+<br/><br/>
+
+<a href="default.html">default.html로 이동</a>
+<br/><br/>
+
+<a href="http://localhost:8080/sample2/default.html">sample2/default.html로 이동</a>
+<br/><br/>
+
+<!--
+    form : link의 목적
+           (입력을 받아서) 값을 전달
+
+   값을 전달시 사용되는 attribute
+   id       :   현재 html문서에서 하나만을 인식(javascript 이하 js) - js에서 접근하기 위한 attribute
+   class    :   CSS에서 접근할 목적. 하지만 js에서도 접근 가능
+   name     :   (link)값을 전달의 목적. js에서도 접근 가능
+-->
+<form action="default.jsp">
+
+아이디:<input type="text" name="id" placeholder="아이디입력"><br/>
+패스워드:<input type="password" name="pw" placeholder="비밀번호입력"><br/>
+
+<input type="submit" value="이동">
+<input type="reset" value="초기화">
+
+</form>
+</body>
+</html>

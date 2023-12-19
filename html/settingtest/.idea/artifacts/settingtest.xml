@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="settingtest">
-    <output-path>$PROJECT_DIR$/src/main/webapp</output-path>
-    <root id="root">
-      <element id="artifact" artifact-name="settingtest:war exploded" />
-    </root>
-  </artifact>
-</component>

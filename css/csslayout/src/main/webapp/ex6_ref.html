@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #name {
+            width: 200px;
+            height: 20px;
+            margin-left: 10px;
+            padding-left: 10px;
+            border-radius: 0.4em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>설문조사</h1>
+
+<form action="">
+    <label>
+        이름: <input type="text" id="name" name="name" placeholder="이름을 기입"/>
+    </label>
+    <hr/>
+    <b>질문(1)</b>
+    영어회화에 관심이 있습니까?<br/><br/>
+    <label><input type="radio" name="eng" value="yes" checked>예</label>
+    <label><input type="radio" name="eng" value="none">둘 다 말할 수 없음</label>
+    <label><input type="radio" name="eng" value="no">아니요</label>
+
+    <hr/>
+
+    <b>질문(2)</b>
+    영어 이외에 관심이 있는 어학이 있으면 선택해 주세요(복수 답변가능)<br/><br/>
+    <input type="checkbox" name="lang" value="ger">독일어
+    <input type="checkbox" name="lang" value="fre">프랑스어
+    <input type="checkbox" name="lang" value="ita">이탈리아어
+    <input type="checkbox" name="lang" value="spa">스페인어
+    <input type="checkbox" name="lang" value="jap">일본어
+
+    <hr/>
+
+    <b>질문(3)</b>
+    영어 수업에 대한 의견<br/><br/>
+    <textarea rows="10" cols="60" placeholder="의견을 기입해주세요"></textarea>
+
+    <hr/>
+
+    <b>질문(4)</b>
+    나이를 선택하세요
+    <select name="age">
+        <option value="0">아래에서 선택</option>
+        <option value="10">10 ~ 19세</option>
+        <option value="20">20 ~ 29세</option>
+        <option value="30">30 ~ 39세</option>
+        <option value="40">40 ~ 49세</option>
+        <option value="50">50 ~ 59세</option>
+        <option value="60">60 ~ 69세</option>
+        <option value="70">70세 이상</option>
+    </select>
+
+    <hr/>
+
+    <input type="submit" value="제출">
+    <input type="reset" value="초기화">
+
+</form>
+</body>
+</html>

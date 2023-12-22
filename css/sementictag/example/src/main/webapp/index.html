@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0 auto;
+            text-align: center;
+            width: 1000px;
+            height: 800px;
+        }
+
+        header#top{
+            width: 1000px;
+            height: 120px;
+            color: white;
+            background-color: #cccccc;
+        }
+
+        nav{
+            width: 1000px;
+            height:	40px;
+            background-color: red;
+        }
+
+        aside{
+            width: 200px;
+            height: 400px;
+            background-color: orange;
+            float: left;
+        }
+
+        section{
+            width: 800px;
+            height: 400px;
+            background-color: #00ff00;
+            float: left;
+        }
+
+        header{
+            width: 700px;
+            height: 100px;
+            background-color: #eeeeee;
+        }
+        article{
+            width: 700px;
+            height: 250px;
+            background-color: gray;
+        }
+
+        footer{
+            width: 1000px;
+            height: 120px;
+            color: white;
+            background-color: #cccccc;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+        semantic : 의미있는
+
+        semantic tag
+
+        header  :   헤더
+        nav     :   메뉴 또는 목차 (nav-bar)
+        section :   주제별 그룹화
+        article :   본문에 주 내용이 들어 가는 공간.
+        aside   :   사이드 메뉴, 광고...
+        footer  :   끝부분
+        ---------------------------------------------------------------------------------------------------------
+        |                                                                                                       |
+        |                                              header                                                   |
+        |                                                                                                       |
+        ---------------------------------------------------------------------------------------------------------
+        ---------------------------------------------------------------------------------------------------------
+        |                                                nav                                                    |
+        |                                                                                                       |
+        ---------------------------------------------------------------------------------------------------------
+        -----------------------  -----------------------------  -------------------------   ---------------------
+        |                     |  |  section                  |  |  section2             |   |      aside        |
+        |                     |  |                           |  |                       |   |                   |
+        |                     |  |                           |  |                       |   |   좌측에있어도됨  |
+        |       nav           |  |  _______________________  |  |                       |   |                   |
+        | 위에도되고 여기도됨 |  | |      article         |  |  |                       |   |                   |
+        |                     |  | |                      |  |  |                       |   |                   |
+        |                     |  | |______________________|  |  |                       |   |                   |
+        -----------------------  -----------------------------  -------------------------   ---------------------
+        ---------------------------------------------------------------------------------------------------------
+        |                                                                                                       |
+        |                                                footer                                                 |
+        |                                                                                                       |
+        ---------------------------------------------------------------------------------------------------------
+-->
+
+<header id="top">header(top)</header>
+
+<nav>nav</nav>
+
+<section>section
+    <header>header</header>
+
+    <article>article</article>
+</section>
+
+<aside>aside</aside>
+
+<footer>footer</footer>
+
+
+</body>
+</html>

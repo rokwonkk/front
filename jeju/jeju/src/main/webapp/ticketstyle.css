@@ -1,0 +1,64 @@
+body {
+  background: #f7f8fd;
+  color: #0b1f66;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 40px;
+}
+
+.flight-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(18, 23, 42, 0.03);
+}
+
+.flight-card h2 {
+  border-bottom: 1px solid #dbf1ec;
+  color: #16bf97;
+  font-family: 'Titillium Web';
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  padding: 8px 24px;
+}
+
+.flight-card .content {
+  padding: 16px 24px 24px;
+}
+
+.flight-card h3 {
+  color: #b6bfd3;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  margin: 4px 0;
+}
+
+.flight-card .departure-arrival {
+  color: #1a345e;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.flight-card .departure-arrival .icon {
+  height: 16px;
+  margin: 0 10px;
+}
+
+.flight-card .footer {
+  text-align: right;
+}
+
+.flight-card .footer > a {
+  color: #1a345e;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-left: 24px;
+  text-decoration: none;
+}
+
+.flight-card .soldout {
+  color: #dce0e8;
+}

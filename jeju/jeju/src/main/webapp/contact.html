@@ -5,6 +5,17 @@
     <title>Title</title>
     <link href="style.css" rel="stylesheet">
 </head>
+<script>
+    /* 좋아요 버튼 추가 */
+    const element = document.querySelector('button.like');
+    if (element) {
+        element.addEventListener('click', handleClickLike);
+    }
+
+    function handleClickLike(e) {
+        e.target.classList.toggle('liked');
+    }
+</script>
 <body>
 <div id="container"> <!-- root -->
     <header>
@@ -36,6 +47,26 @@
         <br/>
 
         <a href="airticket.html" id="airport">항공편 보기</a>
+
+        <br/><br/>
+
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
+        <button class="like">♥</button>
     </main>
 
     <footer>

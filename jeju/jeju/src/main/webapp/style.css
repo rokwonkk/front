@@ -109,3 +109,27 @@ img {
 #airport:hover {
     color: red;
 }
+
+/* 좋아요 버튼 관련 css */
+
+.like {
+    background-color: #e7c8c8;
+    border-radius: 16px;
+    border: none;
+    color: #3f3636;
+    font-size: 24px;
+    padding: 4px 12px;
+    transition:
+            color 0.2s ease,
+            margin-top 0.1s ease;
+}
+
+.like:active {
+    margin-top: 2px;
+}
+
+.liked {
+    color: #e13b57;
+}
+
+/* 좋아요 버튼 CSS 끝 */

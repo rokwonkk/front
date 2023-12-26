@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+
+        .top {
+            margin-top: 20px;
+        }
+
+        .center {
+            margin: auto;
+            width: 330px;
+            border: 2px solid #808080;
+            padding: 10px;
+            background-image: -webkit-linear-gradient(90deg, #000000, grey);
+            box-shadow: 2px 2px 5px 1px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 1px lightgray;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 300px;
+        }
+
+        th, td {
+            text-align: left;
+            color: #ffffff;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        input {
+            margin-bottom: 5px;
+        }
+
+        hr {
+            border-color: white;
+        }
+
+        .px-3 {
+            margin-top: 20px;
+            color: white;
+        }
+
+        .px-3:hover {
+            color: grey;
+        }
+
+        .btn-secondary {
+            margin-top: 20px;
+            width: 80px;
+        }
+
+        .check-id {
+            margin-top: 15px;
+        }
+
+        .mid{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="center">
+        <h2>login-in</h2>
+        <table>
+            <tr>
+                <th>ID:</th>
+                <td>
+                    <input type="text" class="form-control" placeholder="id">
+                </td>
+            </tr>
+            <tr>
+                <th>PW:</th>
+                <td>
+                    <input type="password" class="form-control" placeholder="password">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <label>
+                        <input type="checkbox" class="check-id">
+                        Remember id
+                    </label>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2" class="mid">
+                    <input type="submit" class="btn btn-secondary" value="Log-in">
+                    <a href="#" class="btn btn-link rounded-pill px-3" id="white">회원가입</a>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+            <!--            <svg class="bi me-1" width="16" height="16"><use xlink:href="#google"/></svg>-->
+            Sign up with Google
+        </button>
+        <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+            <!--            <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"/></svg>-->
+            Sign up with Facebook
+        </button>
+        <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+            <!--            <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"/></svg>-->
+            Sign up with GitHub
+        </button>
+
+    </div>
+</div>
+</body>
+</html>

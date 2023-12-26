@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*전체 스타일*/
+        .navi {
+            list-style-type: none;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navi li {
+            float: left;
+            position: relative; /*순서대로*/
+            padding: 0;
+            line-height: 40px; /*줄간격*/
+            /*background-color: #600;*/
+            background-image: linear-Gradient(180deg, #600, #000);
+        }
+
+        /*메뉴의 각 링크의 스타일*/
+        .navi li a {
+            display: block; /*영역을 만듦*/
+            font-family: "sans-serif";
+            font-weight: 600; /*글 진하기*/
+            font-size: 14px;
+            padding: 5px 25px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /*메뉴의 각 링크에 마우스오버가 되었을 때 커러 스타일*/
+        .navi li a:hover {
+            color: yellow;
+        }
+
+        /*서브 메뉴에 대한 스타일*/
+        .navi li ul {
+            opacity: 0; /*0.0 ~ 1.0 : 투명도 -> 평소에는 안보임*/
+            position: absolute; /*고정위치에 표시*/
+            left: 0; /*left 좌표는 메인메뉴에서 움직이지 않는다*/
+            width: 180px;
+            background-color: #d8afaf;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navi li:hover ul {
+            opacity: 1;
+        }
+
+        .navi li ul li {
+            float: none; /*옆으로 배치하지 않음*/
+            position: static; /*항목크기에 맞게 배치*/
+            height: 0;
+            line-height: 0; /*줄간격 없음*/
+            background: none;
+        }
+
+        .navi li:hover ul li {
+            height: 30px;
+            line-height: 20px;
+            padding: 5px 0;
+        }
+
+        .navi li ul li a {
+            background: #d8afaf;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #900;
+        }
+
+        .navi li ul li a:hover {
+            /*background: #900;*/
+            background-image: linear-Gradient(180deg, #600, #000);
+        }
+
+        /*매뉴가 보이는 지연시간*/
+        .navi li{
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<!-- nav-bar -->
+<ul class="navi">
+    <li><a href="#">Home</a></li>
+
+    <li><a href="#">웹 개발</a>
+        <ul>
+            <li><a href="#">웹 디자인</a></li>
+            <li><a href="#">Html + CSS</a></li>
+            <li><a href="#">Jqeury</a></li>
+            <li><a href="#">웹 + Mobile</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">게시판</a>
+        <ul>
+            <li><a href="#">Q & A</a></li>
+            <li><a href="#">방명록</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">프로필</a></li>
+</ul>
+
+</body>
+</html>

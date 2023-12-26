@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        ul li:nth-of-type(1) {
+            background-color: red;
+        }
+
+        ul li:nth-of-type(2) {
+            background-color: yellow;
+        }
+
+        ul li:nth-of-type(3) {
+            background-color: blue;
+        }
+
+        /*.cls {*/
+        /*    display: flex;*/
+        /*}*/
+
+        /*
+        .cls{
+            display: flex;
+            justify-content: center;    !*가운데 맞춤*!
+
+            align-self: center; !* 테두리의 div의 중간 맞춤 *!
+            height: 200px;
+        }
+        */
+
+        /*우측하단정렬*/
+        /*
+        .cls {
+            display: flex;
+            justify-content: flex-end;  !*오른쪽 정렬*! !*flex-start: 왼쪽정렬 *!
+            align-items: flex-end;      !*하단 정렬*!
+            height: 200px;
+        }
+        */
+
+        /*
+        .cls {
+            display: flex;
+            justify-content: space-around;  !*좌우간격 있음*!
+        }
+        */
+
+
+        .cls {
+            display: flex;
+            justify-content: space-between; /* 상하의 간격이 없음*/
+            align-items: flex-start;
+            flex-direction: column;
+            height: 400px;
+        }
+
+
+
+        .cls1, .cls2, .cls3 {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .cls1 {
+            background-color: red;
+        }
+
+        .cls2 {
+            background-color: yellow;
+        }
+
+        .cls3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    Flexible Box(Flex box)
+    layout 배치 기능
+
+    Flex
+ -->
+<!--<ul>-->
+<!--    <li>첫번째 element(요소)</li>-->
+<!--    <li>두번째 element(요소)</li>-->
+<!--    <li>세번째 element(요소)</li>-->
+<!--</ul>-->
+
+<div class="cls">
+    <div class="cls1">Coffee</div>
+    <div class="cls2">Tea</div>
+    <div class="cls3">Soda</div>
+</div>
+
+</body>
+</html>

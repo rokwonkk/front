@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+/* 메뉴 전체 스타일 */
+#menu {
+	width: 960px; /* 메뉴 너비 */
+	height: 40px; /* 메뉴 높이 */
+	clear: both; /* 플로팅 사용하지 않음 */
+}
+
+/* 메인 메뉴 스타일 */
+ul.navi {
+	float: left; /* 왼쪽으로 플로팅 */
+	width: 960px; /* 메인 메뉴 너비 */
+	margin: 0; /* 여백 */
+	padding: 0; /* 안여백 */
+	list-style: none; /* 불릿 없앰 */
+	background: #39F; /* 배경색 */
+	-moz-border-radius-topright: 10px;
+	/* 탭 모양 만듦(topleft와 topright를 둥글게 처리) */
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+/* 메인 메뉴 항목 스타일 */
+ul.navi li {
+	display: inline; /* 가로로 배치 */
+}
+
+/* 메인 메뉴 링크 스타일 */
+ul.navi li a {
+	float: left; /* 왼쪽으로 플로팅 */
+	font: bold 14px 굴림; /* 텍스트 스타일 */
+	line-height: 40px; /* 줄간격 */
+	color: #fff; /* 글자색 */
+	text-decoration: none; /* 밑줄없앰 */
+	text-shadow: 1px 1px 1px #880000; /* 텍스트 그림자 */
+	margin: 0; /* 여백 */
+	padding: 0 30px; /* 안여백 */
+	background: #39F; /* 배경색 */
+	-moz-border-radius-topright: 10px;
+	/* 탭 모양 만듦(topleft와 topright를 둥글게 처리) */
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+/* 현재 선택된 링크 스타일과 마우스 오버 상태일 때 링크 스타일 */
+ul.navi .current a, ul.navi li:hover>a {
+	color: #fff; /*글자색 */
+	text-decoration: none; /* 밑줄 없앰 */
+	text-shadow: 1px 1px 1px #330000; /* 텍스트 그림자 */
+	background: #36F; /* 배경색 */
+	-moz-border-radius-topright: 10px; /* 탭 모양 만듦 */
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+/* 서브 메뉴 스타일 */
+ul.navi  ul {
+	display: none; /* 기본으로 화면에 표시 안함 */
+}
+
+/* 메인 메뉴 위에 마우스 오버한 후 나타나는 서브 메뉴 스타일 */
+ul.navi li:hover>ul {
+	position: absolute; /* 고정 위치 포지셔닝 */
+	display: block; /* 영역 확보 */
+	width: 920px; /* 너비 */
+	height: 45px; /* 높이 */
+	margin: 40px 0 0 0; /* 여백 */
+	background: #33F; /* 배경색 */
+	-moz-border-radius-bottomright: 10px;
+	/* 탭 모양 만듦(bottoleft와 bottoright를 둥글게 처리) */
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+}
+
+/* 메인 메뉴 항목에 마우스 오버한 후 나타나는 서브 메뉴 항목의 링크 스타일 */
+ul.navi li:hover>ul li a {
+	float: left; /* 왼쪽으로 플로팅 */
+	font: bold 14px 굴림; /* 텍스트 스타일 */
+	line-height: 45px; /* 줄간격 */
+	color: #fff; /* 글자색 */
+	text-decoration: none; /* 밑줄 없앰 */
+	text-shadow: 1px 1px 1px #110000; /* 텍스트 그림자 */
+	margin: 0; /* 여백 */
+	padding: 0 30px 0 0; /* 안여백 */
+	background: #33F; /* 배경색 */
+}
+
+/* 메인 메뉴 항목에 마우스 오버한 후 서브 메뉴 항목에 마우스 오버했을 때 스타일 */
+ul.navi li:hover>ul li a:hover {
+	color: #120000; /*글자색 */
+	text-decoration: none; /* 밑줄 없앰 */
+	text-shadow: none; /* 텍스트 그림자 */
+}
+</style>
+
+</head>
+<body>
+	<div id="menu">
+		<ul class="navi">
+			<li><a href="#"> Home </a></li>
+			<li><a href="#"> 웹 개발</a>
+				<ul>
+					<li><a href="#"> 웹 디자인 </a></li>
+					<li><a href="#"> HTML5 + CSS3</a></li>
+					<li><a href="#"> JQuery</a></li>
+					<li><a href="#"> 웹 + 모바일</a></li>
+				</ul></li>
+			<li><a href="#"> 게시판 </a>
+				<ul>
+					<li><a href="#"> Q & A </a></li>
+					<li><a href="#"> 방명록</a></li>
+				</ul></li>
+			<li><a href="#"> 프로필</a></li>
+		</ul>
+	</div>
+</body>
+</html>

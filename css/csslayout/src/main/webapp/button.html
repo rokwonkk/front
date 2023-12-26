@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.wrapper {
+            width: 600px;
+            margin: 0 auto;
+            padding: 0 30px 36px;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 10px 6px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            line-height: 1;
+
+            border-radius: 5px;
+            box-shadow: 0 1px 3px #999;
+
+            text-shadow: 0 -1px 1px #222;
+            border-bottom: 1px solid #222;
+
+            position: relative;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #111;
+            color: #fff;
+        }
+
+        /*버튼이 클릭된 경우*/
+        .btn:active {
+            top: 2px;
+        }
+
+        .red.btn {
+            background-color: #e33100;
+        }
+
+        .red.btn:hover {
+            background-color: #872300;
+        }
+
+        .yellow.btn {
+            background-color: #ffb515;
+        }
+
+        .yellow.btn:hover {
+            background-color: #fc9200;
+        }
+
+        .blue.btn {
+            background-color: #0098df;
+        }
+
+        .blue.btn:hover {
+            background-color: #007d9a;
+        }
+
+        /*두번째 경우*/
+        .button {
+            position: relative;
+            width: 120px;
+            height: 24px;
+            padding: 5px 6px 3px;
+            border-radius: 16px;
+            border: 2px solid #ccc;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: rgba(10, 10, 10, 0.5) 1px 2px 2px;
+            text-align: center;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+        .aqua {
+            background-color: rgba(60, 132, 198, 0.8);
+            background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(rgba(28, 91, 155, 0.8)), to(rgba(108, 191, 255, 0.9)));
+            border-top-color: #8ba2c1;
+            border-right-color: #5890bf;
+            border-bottom-color: #4f93ca;
+            border-left-color: #768fa5;
+            box-shadow: rgba(66, 140, 240, 0.5) 1px 2px 5px;
+        }
+
+        .button .blaze {
+            position: absolute;
+            top: 0;
+            left: 5px;
+            border-radius: 8px;
+            height: 1px;
+            width: 123px;
+            padding: 8px 0;
+            background-color: rgba(255, 255, 255, 0.25) ;
+            background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)));
+        }
+
+        .button:hover{
+            color: #111;
+            text-shadow: rgb(255, 255, 255) 0 0 5px;
+        }
+
+        .button:active{
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffff00;
+            top: 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <a class="medium red btn">Red Button &raquo;</a><br/><br/>
+    <a class="medium yellow btn">yellow Button &raquo;</a><br/><br/>
+    <a class="medium blue btn">blue Button &raquo;</a><br/><br/>
+</div>
+
+<br/><br/><br/><br/>
+
+<div class="button aqua">
+    <a class="blaze">HTML5</a>
+</div>
+
+</body>
+</html>

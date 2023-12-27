@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<!--id class name-->
+
+<p>hello</p>
+
+<p>world</p>
+
+<p>I can do it</p>
+
+<script type="text/javascript">
+    /**
+     *  getElementById
+     *  getElementsByClassName
+     *  getElementsByName
+     *  getElementsByTagName
+     */
+
+    let str = document.getElementsByTagName("p")[1].innerHTML;
+    // console.log(str)
+
+    // document.getElementsByTagName("p")[2].innerText = "나는 문제 없어";
+
+    let arrPtag = document.getElementsByTagName("p");
+    // console.log(arrPtag[0].innerHTML);
+
+    for (let i = 0; i < arrPtag.length; i++) {
+        console.log(arrPtag[i].innerHTML);
+    }
+</script>
+
+<!-- getElementById -->
+
+<p id="demo">나는 반드시 <b>성공</b>한다.</p>
+
+<h3 id="demo">내일의 희망이 뜬다</h3>
+
+<script>
+
+    // let demo = document.getElementById("demo").innerHTML;
+    let demo = document.getElementById("demo").innerText;       //getter
+    console.log(demo);
+
+    document.getElementById("demo").innerText = "Naver change my mind";   //setter
+</script>
+
+<!-- 입출력태그 -->
+<label for="iopro"></label><input type="text" id="iopro" placeholder="입력" value="초기값"/>
+
+<select>
+    <option id="fruit">전체</option>
+    <option value="apple">사과</option>
+    <option value="banana">바나나</option>
+    <option value="pear">배</option>
+</select>
+
+<script>
+
+    let iopro = document.getElementById("iopro").value;
+    console.log(iopro);
+
+    document.getElementById("iopro").value = "반갑습니다";
+
+    let fruit = document.getElementById("fruit").value;
+    console.log(fruit);
+
+    document.getElementById("fruit").value = "pear";
+</script>
+<br/><br/><br/><br/><br/>
+<!--
+getElementsByName
+getElementsByClass
+-->
+<input type="text" class="cls" size="20" placeholder="이름" value="홍길동"><br/><br/>
+<input type="text" class="cls" size="20" placeholder="주소" value="부산시"><br/><br/>
+<input type="text" class="cls" size="20" placeholder="이메일" value="abc@abc"><br/><br/>
+
+<script>
+    let human = document.getElementsByClassName("cls")[1].value;
+    console.log(human);
+
+    human = document.getElementsByClassName("cls");
+
+    for (const human1 of human) {
+        console.log(human1.value);
+    }
+
+    // for (let i = 0; i < human.length; i++) {
+    //
+    //     console.log(i + ": " + human[i].value);
+    //
+    // }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- internal 선호하지 않음 -->
+    <!--    <script>
+            function func(){
+                alert('internal func() 실행!');
+            }
+        </script>-->
+
+    <!-- external -->
+    <script type="text/javascript" src="myfunc.js"></script>
+</head>
+<body>
+
+<p onclick="alert('p태그 클릭!')">클릭</p>
+
+<p onclick="func()">클릭</p>
+<!--<script>
+    //body-in
+    function func(){
+        alert('func() 실행!');
+    }
+</script>-->
+
+</body>
+</html>

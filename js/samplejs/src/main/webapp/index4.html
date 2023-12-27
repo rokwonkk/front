@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo">여기가 p 태그</p>
+
+<input type="text" id="memo"><br/><br/>
+
+<button type="button" onclick="alert('클릭!')">버튼</button>
+
+<input type="button" value="버튼" onclick="buttonClick()">
+
+<script>
+function buttonClick(){
+    // alert('버튼클릭!');
+    let memo = document.getElementById("memo").value;
+
+    if(memo.trim() === ""){
+        alert("단어를 입력해 주십시오");
+        return;
+    }
+    document.getElementById("demo").innerHTML = memo;
+}
+</script>
+
+</body>
+</html>

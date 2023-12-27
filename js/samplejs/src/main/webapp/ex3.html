@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function add() {
+        document.getElementById("oper").value = "+";
+
+        let first = parseInt(document.getElementById("first").value);
+        let second = parseInt(document.getElementById("second").value);
+
+        document.getElementById("res").value = first + second;
+    }
+
+    function sub() {
+        document.getElementById("oper").value = "-";
+
+        let first = parseInt(document.getElementById("first").value);
+        let second = parseInt(document.getElementById("second").value);
+
+        document.getElementById("res").value = first - second;
+    }
+
+    function mul() {
+        document.getElementById("oper").value = "*";
+
+        let first = parseInt(document.getElementById("first").value);
+        let second = parseInt(document.getElementById("second").value);
+
+        document.getElementById("res").value = first * second;
+
+    }
+
+    function div() {
+        if (document.getElementById("second").value == 0) {
+            alert("0으로는 나눌 수 없습니다.");
+            return;
+        }
+        document.getElementById("oper").value = "/";
+
+        let first = parseInt(document.getElementById("first").value);
+        let second = parseInt(document.getElementById("second").value);
+
+        document.getElementById("res").value = first / second;
+    }
+
+    function rem() {
+        if (document.getElementById("second").value == 0) {
+            alert("0으로는 나머지를 구할 수 없습니다.");
+            return;
+        }
+        document.getElementById("oper").value = "%";
+
+        let first = parseInt(document.getElementById("first").value);
+        let second = parseInt(document.getElementById("second").value);
+
+        document.getElementById("res").value = first % second;
+    }
+
+</script>
+
+<p> 변수의 연산</p>
+
+a, b에 대해서 변수 a와 b의 계산 결과를 표시합니다.<br/><br/>
+<input type="button" onclick="add()" value="덧셈">
+<input type="button" onclick="sub()" value="뺄셈">
+<input type="button" onclick="mul()" value="곱셈">
+<input type="button" onclick="div()" value="나눗셈">
+<input type="button" onclick="rem()" value="나머지">
+<br/><br/>
+<input type="text" id="first">
+<input type="text" id="oper" readonly>
+<input type="text" id="second">
+<label for="res">= </label><input type="text" id="res" readonly>
+
+</body>
+</html>

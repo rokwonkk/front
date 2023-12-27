@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function func(){
+    let que = document.getElementById("que").value;
+    if (que === "한라산"){
+        alert('정답입니다.');
+    } else {
+        alert("틀렸습니다. 다시 입력하여 주십시오.")
+    }
+}
+
+</script>
+
+<p> 한국에서 제일 높은 산은?</p>
+
+<label for="que">답: </label><input type="text" id="que">
+<input type="button" id="dab" onclick="func()" value="정답">
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function light() {
+        let total = parseInt(document.getElementById("total").value);
+
+        let result  = parseInt(document.getElementById("cb1").value);
+        let checked  = document.getElementById("cb1").checked;
+        if(checked){
+            total += result;
+        }else{
+            total -= result;
+        }
+        document.getElementById("total").value = total;
+    }
+
+    function net() {
+        let total = parseInt(document.getElementById("total").value);
+
+        let result  = parseInt(document.getElementById("cb2").value);
+        let checked  = document.getElementById("cb2").checked;
+        if(checked){
+            total += result;
+        }else{
+            total -= result;
+        }
+        document.getElementById("total").value = total;
+    }
+
+    function ball() {
+        let total = parseInt(document.getElementById("total").value);
+
+        let result  = parseInt(document.getElementById("cb3").value);
+        let checked  = document.getElementById("cb3").checked;
+        if(checked){
+            total += result;
+        }else{
+            total -= result;
+        }
+        document.getElementById("total").value = total;
+    }
+
+</script>
+
+<h1> 체육관 이용 요금</h1>
+
+<p>기본 사용료 (2면, 4시간) 40,800원</p>
+<input id="cb1" type="checkbox" value="20000" onclick="light()"> 야간 조명 (20,000원)<br/>
+<input id="cb2" type="checkbox" value="4000" onclick="net()"> 배구 네트x2면 (4,000원)<br/>
+<input id="cb3" type="checkbox" value="5000" onclick="ball()"> 배구 공x10개 (5,000원)<br/>
+<br/>
+합계 금액 <input type="text" id="total" value="40800" readonly> 원정
+
+</body>
+</html>

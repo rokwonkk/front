@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--변수 variable -->
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+    /**
+     *  Integer, String, Character, MyClass, HumanDto
+     *
+     *  MyClass mycls = new MyClass();
+     *  String str = "hello";
+     *  String str = new String("hello");
+     *
+     *  Object cls = new MyClass();
+     *  Object cls = new Character();
+     *  Object cls = new HumanDto();
+     *
+     *  HumanDto dto = (HumanDto)cls;
+     *  java   <->  js
+     *  Object ==   var -> let
+     */
+
+    var number = 123;       //int
+    var pi = 3.141592;      //double
+    var name = "홍길동";    //string
+    var answer = true;      //boolean
+
+    var hum, num;
+    hum = "성춘향";
+    num = 123 + 1;
+
+    console.log(hum);
+    console.log(num);
+
+    num = "일지매";
+
+    console.log(num);
+
+    mynumber = 111;
+
+    console.log(mynumber);
+
+    var mynumber = 222;
+    console.log(mynumber);
+
+    var mynumber = 333;
+    console.log(mynumber);
+
+    let myname;
+    myname = "이몽룡";
+
+    console.log(myname);
+
+    let nn = "5" + 3 + 1;
+    console.log(nn);
+
+    nn = 3 + 1 + "5";
+    console.log(nn);
+
+    //제어문 java와 동일(차이점만 파악!)
+
+    if (nn == "45") {
+        console.log("true입니다");
+    }
+
+    //Array == Object
+    /*
+        let cars = [3];
+
+        cars[0] = "saab";
+        cars[1] = "volvo";
+        cars[2] = "benz";
+    */
+    let cars = ["saab", "volvo", "benz"];
+
+    console.log(cars[2]);
+
+    for (let i = 0; i < cars.length; i++) {
+        console.log(i + ": " + cars[i]);
+    }
+
+    let cars2 = [["sabb", 11], ["volvo", 22], ["benz", 33]];
+
+    console.log(cars2[2][0]);
+    /*
+        for (let i in cars){
+            console.log(cars[i]);
+        }
+
+        for (const car of cars) {
+            console.log(car);
+        }
+    */
+    // == : reference / === : value
+    for (let i = 0; i < cars.length; i++) {
+        if (cars[i] === "volvo") {
+            console.log(i + ": " + cars[i]);
+        }
+    }
+
+    /*
+    ----- java ----
+    class Human{
+        String name;
+        int age;
+
+        public Human(String name, int age){
+            this.name = name;
+            this.age = age;
+        }
+        public void print(){
+            System.out.println(this.name + " " + this.age);
+        }
+    }
+    ---------------
+    */
+    //비교 위에 자바랑 같음
+    //js에서 이렇게 사용할 수 있지만 이렇게 사용안함.
+    class Human {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        print() {
+            console.log(this.name + " " + this.age);
+        }
+    }
+
+    let human = new Human("성춘향", 16);
+    console.log(human.name);
+    human.print();
+
+    /* key:value == json */
+    let obj = {
+        "firstname": "춘향",
+        "lastname": "성",
+        "age": 16,
+        method: function () {
+            console.log(this.lastname + this.firstname + " " + this.age)
+        }
+    };
+
+    console.log(obj.firstname);
+    console.log(obj.lastname);
+    console.log(obj.age);
+
+    obj.method();
+
+    //데이터가 2개 이상일 경우 무조건 오브젝트 취급
+    document.getElementById("demo").innerHTML = "홍길동 : " + typeof "홍길동" + "<br/>"
+        + "123: " + typeof 123 + "<br/>"
+        + "123.4567: " + typeof 123.4567 + "<br/>"
+        + "true: " + typeof true + "<br/>"
+        + "array: " + typeof [1, 2, 3] + "<br/>"
+        + "object: " + typeof obj;
+
+    // let address;    // 변수
+
+    const address = "부산시";  // 상수
+
+    // address = "서울시";
+
+    const myobj = {
+        method: function (a, b) {
+            console.log(a * b);
+        },
+        func:function (a, b){
+            console.log(a + b);
+        }
+    };
+
+    myobj.method(11, 22);
+</script>
+
+</body>
+</html>

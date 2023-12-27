@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- internal 실시간 조작 못함 하지만 함수를 만들어 사용할때는 head 넣고 씀 -->
+    <script>
+
+    </script>
+    <!-- internal 끝 -->
+
+    <!-- external 코드로만 치자면 깔끔한 external이 깔끔 -->
+    <script src=""></script>
+    <!-- external 끝 -->
+
+</head>
+<body>
+
+<!--
+
+    js              !=              java
+    client(front)            Server(back)
+
+    Client 언어. front-end
+    목적 : 웹 브라우저 tag를 접근하기 위한 스크립트.
+    보조 프로그래밍적인 요소이다.
+    화면을 제어하기 위한 스크립트.
+    컴파일 하지 않는다. -> 가볍다 -> 속도가 빠르다.
+
+    Java Script 간략화 -> Jquery -> angler -> node.js --> <!--react-->
+<!--type Script                                       --> <!--vue-->
+<!-- ex) 회원 가입 -> id가 빈칸?
+                      id의 글자수
+                      link의 경우 제어가능
+
+      css 에 대해서 제어, 구현
+      timer를 설정하고 특수한 처리도 가능
+
+      tag(input, button...) 접근 - Property(attribute)
+      id        -> 1개
+      class     -> 다수
+      name      -> 다수
+
+      DOM(Document Object Model): 해당 문서에 접근하여 읽고 조작 할 수 있도록 하는 API
+
+      getElementById
+      getElementsByClass
+      getElementsByName
+      getElementsByTagName
+                :
+-->
+<!-- 실시간조작가능 보통 그래서 바디에서 script사용 -->
+<script>
+// java script 영역(area)
+
+/**
+ *  범위 주석문
+ */
+
+console.log('java script 실행');     // 콘솔에서 실행된다.
+
+//alert("경계창 실행");                //출력창
+
+// var v = prompt("문자열을 입력하세요");       //입력창
+
+// console.log(v);
+
+// prompt('숫자를 입력하세요', 1);      // 1 은 초기값
+
+</script>
+
+<p id="demo">안녕하세요 <b>반갑습니다</b></p>
+<script>
+
+    //DOM을 이용해서 태그에 접근
+    //      현재문서    id가 demo            태그안의 html 코드
+    var v = document.getElementById("demo").innerHTML;          //getter
+    console.log(v);
+
+    document.getElementById("demo").innerHTML = "건강하세요";
+
+</script>
+
+
+</body>
+</html>

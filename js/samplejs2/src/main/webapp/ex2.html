@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>(문제)</h1>
+영어 속담으로 "1일 1개씩 먹으면 읫가 필요없다" 라고하는 과일은 무엇일까요?
+<br/><br/>
+<label>
+    <input type="checkbox" id="isLower"> 영어(소문자)로 답한다
+</label>
+<br/><br/>
+<label>
+    답:
+    <input type="text" id="asw" size="30"> <button onclick="check()">답을 체크</button>
+</label>
+<script>
+    function check(){
+        let a = document.getElementById("asw").value;
+        let b = document.getElementById("isLower").checked;
+
+        if (b){
+            if(a.trim()  === "apple"){
+                console.log("정답입니다.");
+            }else {
+                console.log("정답아닙니다.");
+            }
+        } else {
+            if(a.trim() === "사과"){
+                console.log("정답입니다.");
+            }else {
+                console.log("정답아닙니다.");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1 id="days">다음 생일까지 남은 일수</h1>
+    <h5>다음 버튼을 클릭하여 생일을 입력하면, <br/>다음 생일까지 남은 일수를 볼 수 있습니다</h5>
+    <input type="button" value="생일을 입력" onclick="prom()">
+</div>
+
+<script type="text/javascript">
+    function prom() {
+        // 2번
+        let birthMonth = prompt("생일 월을 입력해 주십시오");
+        let birthDay = prompt("생일 날짜를 입력해 주십시오");
+
+        //현재 날짜와 비교
+        let nowday = new Date(); //오늘
+        let birth = new Date(); //생일을 작성 할 날짜
+
+        // 자신의 생일을 저장
+        birth.setMonth(birthMonth - 1);
+        birth.setDate(birthDay);
+
+        //자신의 생일 - 현재날짜
+        let mSecond = birth.getTime() - nowday.getTime();
+
+        // mSecond가 마이너스(-)일 경우 -> 생일이 지났으므로 조건을 달아줌
+        if (mSecond < 0) {
+            let birthYear = birth.getFullYear();
+            birth.setFullYear(birthYear + 1);
+
+            mSecond = birth.getTime() - nowday.getTime();
+        }
+        // 위에서 얻은 초를 다시 나눠줌
+        document.getElementById("days").innerHTML = mSecond / (24 * 60 * 60 * 1000);
+    }
+</script>
+</body>
+</html>

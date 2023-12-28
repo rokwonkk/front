@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<h3 id="h3">태영건설 워크아웃 개시여부 내년 1월11일 결정</h3>
+
+
+<script>
+    let str = document.getElementById("h3").innerHTML;
+
+    //문자열의 길이
+    let length = str.length;
+    console.log(length);
+
+    // 문자의 위치
+    let pos = str.indexOf("아")
+    console.log(pos);
+
+    // 문자열 자르기
+    // let substr = str.substring(5, 9);
+    let substr = str.slice(5, 9);
+    console.log(substr);
+
+    //문자열 비교
+    if (substr === "워크아웃"){
+        console.log("참");
+    }
+
+    // 문자열 분할(split)
+    str = "나랏 말 싸미 듕 귝에 달아, 아맛띠 아니할쎄, 밝은 달빛아래, 칼을 허리에, 차고"
+    let arrStr = str.split(",");
+
+    for (let i = 0; i < arrStr.length; i++) {
+        console.log(arrStr[i]);
+    }
+
+    //문자열 수정
+    str = "hello world";
+    let replaceStr = str.replace("world", "javascript");
+    console.log(replaceStr);
+</script>
+
+</body>
+</html>

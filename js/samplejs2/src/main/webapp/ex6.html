@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>다음 생일까지 남은 일수</h1>
+다음 버튼을 클릭하여 생일을 입력하면,
+<br/>
+다음 생일까지 남은 일수를 볼 수 있습니다.
+<br/><br/>
+<input type="button" value="생일을 입력" onclick="inputBirthDay()">
+
+<p type="text" id="birthDay" size="10"></p>
+
+<script type="text/javascript">
+    function inputBirthDay(){
+        let inputMonth = prompt('월을 입력해주심씨오');
+        let inputDay = prompt('날짜를 입력해주심씨오');
+
+        let nowday = new Date();
+        let birth = new Date();
+
+        birth.setMonth(inputMonth - 1);
+        birth.setDate(inputDay);
+
+
+    }
+</script>
+</body>
+</html>

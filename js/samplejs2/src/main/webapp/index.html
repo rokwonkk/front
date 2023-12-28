@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- function -->
+<button type="button" onclick="funcname()">클릭</button>
+
+<script>
+    function funcname() {
+        alert("funcname 호출");
+
+        let text = document.getElementById("text").value;
+        document.getElementById("demo").innerHTML = text;
+    }
+</script>
+
+<br/><br/>
+
+<input type="text" id="a">
++
+<input type="text" id="b">
+=
+<input type="text" id="res">
+
+<button type="button" onclick="calc()">연산 결과</button>
+
+<script>
+    function proc() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+
+        return a + b;
+    }
+    function calc() {
+        document.getElementById("res").value = proc();
+    }
+</script>
+
+<br/><br/>
+
+<script>
+    function myFunc(x, y) {
+        return x * y;
+    }
+
+    //es5
+    const myFunc2 = function(x, y){
+        return x * y;
+    }
+    console.log(myFunc2(2, 3));
+
+    //es6
+    const myFunc3 = (x, y) => { // arrow(화살표) function  -> Ramda
+        return x * y;
+    }
+    console.log(myFunc3(3, 4));
+
+</script>
+
+</body>
+</html>

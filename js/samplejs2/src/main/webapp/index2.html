@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<br/><br/>
+
+<input type="text" id="text" size="40">
+<br/><br/>
+
+<button type="button" onclick="displayDate()">지금 시간</button>
+
+<script>
+    function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+        document.getElementById("text").value = Date();
+    }
+
+    // setInterval("displayDate()", 1000);
+</script>
+
+<br><br/>
+<p id="date"></p>
+
+<script>
+    let d = new Date(); //현재 시각 취득
+
+    // let d = new Date(2023, 12 - 1, 31, 7, 16, 35, 0); //현재 시각 설정(set)
+
+    // let d = new Date("October 12, 2023, 12:33:17")
+
+    document.getElementById("date").innerHTML = d.getDay(); // 요일
+    document.getElementById("date").innerHTML = d.getFullYear(); // 년도
+    document.getElementById("date").innerHTML = d.getMonth() + 1; // 월
+    document.getElementById("date").innerHTML = d.getDate(); // 일
+    document.getElementById("date").innerHTML = d.getHours(); // 시
+    document.getElementById("date").innerHTML = d.getMinutes(); // 분
+    document.getElementById("date").innerHTML = d.getSeconds(); // 초
+
+    document.getElementById("date").innerHTML = d.getTime(); // 시간
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function makefunc() {
+
+        //일반
+        //생성
+        const ptag = document.createElement("p"); // <p></p>
+
+        //설정
+        ptag.innerHTML = "Hello P Tag";           // <p>Hello P Tag</p>
+
+        //적용
+        document.body.appendChild(ptag);
+
+        //버튼
+        const btn = document.createElement("button");
+
+        btn.innerHTML = "바톰";
+
+        btn.addEventListener("click", buttonClick)
+
+        document.body.appendChild(btn)
+
+        // input
+        const input = document.createElement("input");
+
+        input.type = "text";
+
+        input.setAttribute("type", "text");
+        input.setAttribute("placeholder", "입력좀요");
+        input.setAttribute("id", "name");
+
+        // document.body.appendChild(input);
+
+        document.getElementById("div").appendChild(input);
+
+    }
+
+    function buttonClick(){
+        alert("buttonClick()")
+
+        let name = document.getElementById("name").value;
+        alert(name);
+    }
+</script>
+
+<button type="button" onclick="makefunc()">element_make</button>
+
+<div id="div"></div>
+
+</body>
+</html>

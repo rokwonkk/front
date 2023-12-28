@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 10진수 변환 -->
+<script>
+    let num10 = 128;
+
+    //10 -> 2
+    let num2 = num10.toString(2);
+    console.log(num2);
+
+    //10 -> 8
+    let num8 = num10.toString(8);
+    console.log(num8);
+
+    //10 -> 16
+    let num16 = num10.toString(16);
+    console.log(num16);
+
+</script>
+
+<label>
+    <select id = "sel" onchange="func()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</label>
+
+<button type="button" onclick="func()">클릭</button>
+
+<script>
+
+    function func() {
+        let value = document.getElementById("sel").value;
+        alert(value);
+    }
+
+</script>
+
+</body>
+</html>

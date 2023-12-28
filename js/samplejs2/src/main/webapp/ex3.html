@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>환영합니다</h1>
+현재 시각은<input type="text" id="nowtime" size="10"> 입니다.
+
+<script>
+    function displayDate() {
+        let d = new Date();
+        document.getElementById("nowtime").value = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    }
+    setInterval("displayDate()", 1000);
+</script>
+</body>
+</html>

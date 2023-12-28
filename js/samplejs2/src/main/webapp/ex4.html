@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>미술관 및 박물관의 링크</h1>
+<label for="link"></label>
+<select id="link" onchange="goUrl()">
+    <option value="">대상을 선택</option>
+    <option value="sema">서울시립미술관</option>
+    <option value="mmca">국립현대미술관</option>
+    <option value="sac">예술의전당</option>
+    <option value="museum">국립중앙박물관</option>
+    <option value="museumSeoul">서울역사박물관</option>
+    <option value="nfm">국립민속박물관</option>
+</select>
+<script>
+
+    function goUrl(){
+        let url = document.getElementById("link").value;
+        alert(url);
+
+        if (url === "sema") window.open("http://sema.seoul.go.kr/");
+        else if (url === "mmca") window.open("http://www.mmca.go.kr");
+        else if (url === "sac") window.open("http://www.sac.or.kr/");
+        else if (url === "museum") window.open("http://www.museum.go.kr");
+        else if (url === "museumSeoul") window.open("http://www.museum.seoul.kr/");
+        else if (url === "nfm") window.open("http://www.nfm.go.kr/");
+    }
+</script>
+</body>
+</html>

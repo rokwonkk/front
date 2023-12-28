@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>배경색의 변경</h1>
+<p> 다음 버튼을 클릭하면 홈페이지의 배경색을 변경할 수 있습니다.</p>
+
+<button onclick="func(0)">빨강</button>
+<button onclick="func(1)">초록</button>
+<button onclick="func(2)">파랑</button>
+<button onclick="func(3)">주황</button>
+<button onclick="func(4)">검정</button>
+<button onclick="func(5)">흰색</button>
+
+<script>
+    function func(num){
+        let value = document.body;
+
+        if (num === 0) value.setAttribute("style", "background-color:red");
+        else if (num === 1) value.setAttribute("style", "background-color:green");
+        else if (num === 2) value.setAttribute("style", "background-color:blue");
+        else if (num === 3) value.setAttribute("style", "background-color:orange");
+        else if (num === 4) value.setAttribute("style", "background-color:black");
+        else if (num === 5) value.setAttribute("style", "background-color:white");
+    }
+</script>
+
+</body>
+</html>

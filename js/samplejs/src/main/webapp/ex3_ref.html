@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let first, second;
+
+    function getValue() {
+
+        let ta = document.getElementById("first").value.trim();
+
+        // 정상 값 조사
+        if(ta === ''){
+            alert('값을 입력해 주십시오');
+            return;
+        }
+
+        if(ta === true){
+            alert('숫자를 입력해 주십시오');
+            return;
+        }
+
+        first = parseInt(document.getElementById("first").value);
+        second = parseInt(document.getElementById("second").value);
+    }
+
+    function add() {
+
+        document.getElementById("oper").value = "+";
+        document.getElementById("res").value = first + second;
+    }
+
+    function sub() {
+        getValue();
+
+        document.getElementById("oper").value = "-";
+        document.getElementById("res").value = first - second;
+    }
+
+    function mul() {
+        getValue();
+
+        document.getElementById("oper").value = "*";
+        document.getElementById("res").value = first * second;
+
+    }
+
+    function div() {
+        getValue();
+
+        if (second === 0) {
+            alert("0으로는 나눌 수 없습니다.");
+            return;
+        }
+        document.getElementById("oper").value = "/";
+        document.getElementById("res").value = first / second;
+    }
+
+    function rem() {
+        getValue();
+
+        if (second === 0) {
+            alert("0으로는 나머지를 구할 수 없습니다.");
+            return;
+        }
+        document.getElementById("oper").value = "%";
+        document.getElementById("res").value = first % second;
+    }
+
+</script>
+
+<p> 변수의 연산</p>
+
+a, b에 대해서 변수 a와 b의 계산 결과를 표시합니다.<br/><br/>
+<input type="button" onclick="add()" value="덧셈">
+<input type="button" onclick="sub()" value="뺄셈">
+<input type="button" onclick="mul()" value="곱셈">
+<input type="button" onclick="div()" value="나눗셈">
+<input type="button" onclick="rem()" value="나머지">
+
+<br/><br/>
+<input type="text" id="first" size="10" placeholder="숫자입력">
+<input type="text" id="oper" readonly>
+<input type="text" id="second" size="10" placeholder="숫자입력">
+<label for="res">= </label><input type="text" id="res" readonly>
+
+</body>
+</html>

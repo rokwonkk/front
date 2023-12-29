@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<!--
+<script>
+    let total = parseInt(document.getElementById("total").value);
+
+    function sum ( num ){
+
+        // value 취득
+        // id 사용
+        let ch;
+        if(num === 0) ch = "cb1";
+        else if(num === 1) ch = "cb2";
+        else if(num === 2) ch = "cb3";
+
+        let value = document.getElementById(ch).value;
+        // alert(value);
+
+        // class 사용
+        // let value = document.getElementsByClassName("ch") [num].value;
+        // alert(value);
+
+        //checked
+        let state = document.getElementById(ch).checked;    //true/false;
+        // alert(state);
+
+        if (state === true){
+            total = total + value;
+        } else {
+            total = total - value;
+        }
+
+        document.getElementById('total').value = total;
+
+    }
+
+</script>
+
+<h1> 체육관 이용 요금</h1>
+
+<p>기본 사용료 (2면, 4시간) 40,800원</p>
+<input id="cb1" class="ch" type="checkbox" value="20000" onclick="sum(0)"> 야간 조명 (20,000원)<br/>
+<input id="cb2" class="ch" type="checkbox" value="4000" onclick="sum(1)"> 배구 네트 x 2면 (4,000원)<br/>
+<input id="cb3" class="ch" type="checkbox" value="5000" onclick="sum(2)"> 배구 공 x 10개 (5,000원)<br/>
+<br/>
+합계 금액 <input type="text" id="total" value="40800" readonly> 원정
+-->
+
+
+
+<form name="frm">
+    <input id="cb1" class="ch" type="checkbox" value="20000" onclick="sum(0)"> 야간 조명 (20,000원)<br/>
+    <input id="cb2" class="ch" type="checkbox" value="4000" onclick="sum(1)"> 배구 네트 x 2면 (4,000원)<br/>
+    <input id="cb3" class="ch" type="checkbox" value="5000" onclick="sum(2)"> 배구 공 x 10개 (5,000원)<br/>
+    <br/>
+    합계 금액 <input type="text" id="total" value="40800" readonly> 원정
+</form>
+
+
+<script type="text/javascript">
+    let total = parseInt( document.getElementById('total').value );
+
+    function sum( num ) {
+//	alert( document.frm.elements[0].value );
+//	alert( document.frm.elements[0].checked );
+
+        if(document.frm.elements[num].checked === true){
+            total = total + parseInt( document.frm.elements[num].value );
+        }
+        else{
+            total = total - parseInt( document.frm.elements[num].value );
+        }
+
+        document.frm.elements[3].value = total;
+    }
+</script>
+
+</body>
+</html>

@@ -8,10 +8,15 @@
 <script>
     function func(){
         alert("존예 칼있냐");
+
+        document.getElementById("pic").innerHTML = '카리나 사진입니다';
+
+        document.getElementById("picture").value = '너무이쁜 카리나';
     }
 </script>
 
-<img alt="" src="images/4.png" onclick="func()">
+<img alt="" src="images/4.png" id="pic" onclick="func()">
+<input type="text" id="picture" size="20" readonly>
 
 </body>
 </html>

@@ -13,7 +13,6 @@
 
 <script type="text/javascript">
     function prom() {
-        // 2번
         let birthMonth = prompt("생일 월을 입력해 주십시오");
         let birthDay = prompt("생일 날짜를 입력해 주십시오");
 
@@ -26,17 +25,17 @@
         birth.setDate(birthDay);
 
         //자신의 생일 - 현재날짜
-        let mSecond = birth.getTime() - nowday.getTime();
+        let dDay = birth.getTime() - nowday.getTime();
 
-        // mSecond가 마이너스(-)일 경우 -> 생일이 지났으므로 조건을 달아줌
-        if (mSecond < 0) {
+        // dday가 마이너스(-)일 경우 -> 생일이 지났으므로 조건을 달아줌
+        if (dDay < 0) {
             let birthYear = birth.getFullYear();
             birth.setFullYear(birthYear + 1);
 
-            mSecond = birth.getTime() - nowday.getTime();
+            dDay = birth.getTime() - nowday.getTime();
         }
         // 위에서 얻은 초를 다시 나눠줌
-        document.getElementById("days").innerHTML = mSecond / (24 * 60 * 60 * 1000);
+        document.getElementById("days").innerHTML = dDay / (24 * 60 * 60 * 1000);
     }
 </script>
 </body>

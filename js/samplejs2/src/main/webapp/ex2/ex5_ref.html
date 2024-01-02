@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>2개의 이미지</h1>
+버튼을 클릭하면 2개의 카리나 이미지가 랜덤됩니다.
+<br/><br/>
+<img alt="" src="../images/1s.png" id="img1">
+<img alt="" src="../images/6s.png" id="img2">
+<br/><br/>
+<button onclick="randomimg()">이미지를 섞는다.</button>
+
+<script type="text/javascript">
+    function randomimg(){
+
+        //random
+        let r1 = Math.random() * 6;
+        let r2 = Math.random() * 6;
+
+        console.log(r1 + " " + r2);
+
+        // 올림
+        r1 = Math.ceil(r1);
+        r2 = Math.ceil(r2);
+
+        console.log(r1 + " " + r2);
+
+        // document.getElementById("img1").src = './images/'+r1+'s.png';
+        // document.getElementById("img2").src = './images/'+r2+'s.png';
+
+        document.images[0].src = './images/'+r1+'s.png';
+        document.images[1].src = './images/'+r2+'s.png';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    Html
+        : <a href="">
+
+        : <form action="">
+
+    js
+        : location.href = ""
+
+-->
+
+<a href="default.jsp?name=홍길동&age=24">default.html로 이동</a>
+<br/><br/>
+
+<hr/>
+<br/>
+
+<form action="default.jsp">
+    <label>
+        <input type="text" name="name" placeholder="이름"><br/>
+    </label>
+    <label>
+        <input type="text" name="age" placeholder="나이"><br/><br/>
+    </label>
+    <label>
+        <input type="submit" value="default.jsp 이동">
+    </label>
+</form>
+
+<br/><br/>
+
+<hr/>
+<br/>
+
+<label>
+    <input type="text" id="name" placeholder="이름"><br/>
+</label>
+<label>
+    <input type="text" id="age" placeholder="나이"><br/><br/>
+</label>
+<button onclick="btnClick()">default.jsp 이동</button>
+
+<script>
+    const btnClick = () => {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+
+        if (name.trim() === '') {
+            alert('이름을 입력해 주세요');
+            return;
+        }
+
+        if (name.length < 2) {
+            alert('이름을 정확히 입력해주세요');
+            return;
+        }
+
+        location.href = "default.jsp?name=" + name + "&age=" + age;
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+<form name="frm">
+    <label>
+        <input type="text" name="name" placeholder="이름"><br/>
+    </label>
+    <label>
+        <input type="text" name="age" placeholder="나이"><br/><br/>
+    </label>
+    <label>
+        <input type="submit" onclick="move()" value="default.jsp 이동">
+    </label>
+</form>
+<script>
+    function move() {
+        let name = document.frm.name.value;
+        alert(name)
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+</body>
+</html>

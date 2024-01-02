@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="checkMessage()">
+
+<!-- onload -->
+<script type="text/javascript">
+    function checkMessage() {
+        console.log('onload 실행');
+    }
+</script>
+
+<br/><br/>
+
+<!-- onblur : 포커스가 이동 -->
+name:<input type="text" onblur="isRegName()" size="10" maxlength="2">세<br/>
+
+<script type="text/javascript">
+    function isRegName() {
+        console.log('onblur 실행');
+    }
+</script>
+
+<br/><br/>
+
+<!-- onchange : 입력 값이 변경됐을 때 -->
+<!-- input -->
+T:<input type="text" size="5" maxlength="3" onchange="isPostNum(this)">
+-
+<input type="text" size="5" maxlength="3" onchange="isPostNum(this);"/>
+<script>
+    function isPostNum(input) {    //this
+        let value = input.value;
+        // alert(value);
+        // alert(input.type);
+
+        //숫자 아닌 문자가 포함되어 있는 경우
+        if (value.match(/[^0-9]/g)) {
+            alert('숫자가 아닌 문자가 포함되어 있습니다.');
+        }
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+<!-- select -->
+<label>
+    <select onchange="changeValue()">
+        <option>영화보기</option>
+        <option>그림그리기</option>
+        <option>게임플레이</option>
+    </select>
+</label>
+<script>
+    function changeValue() {
+        console.log("onchange 실행");
+    }
+</script>
+
+<br/><br/>
+
+<!-- 대소문자안가리는 아스키코드를 사용할 때 : onkeydown, 대소문자를 완벽하게 가려야 할 때 : onkeypress -->
+<input type="text" name="title"/>
+<script>
+    /*
+    document.getElementsByName("title")[0].onkeydown = function ( event ){
+        console.log("keycode:" + event.keyCode);
+    }
+    */
+    document.getElementsByName("title")[0].onkeypress = function (event) {
+        console.log("keycode:" + event.keyCode);
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+<!-- onMouseDown, onMouseUp, onMouseOver, onMouseOut -->
+<input alt="" type="image" src="../images/san0.gif" onmousedown="mousedown(this)" onmouseup="mouseup(this)"
+       onmouseover="mouseover(this)" onmouseout="mouseout(this)"/>
+
+<img alt="" src="../images/san0.gif">
+
+<script>
+    function mousedown(input) {
+        input.src = "../images/san1.gif"
+    }
+
+    function mouseup(input) {
+        input.src = "../images/san0.gif"
+    }
+
+    function mouseover(input) {
+        input.src = "../images/san2.gif"
+    }
+
+    function mouseout(input) {
+        input.src = "../images/san0.gif"
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+<a href="#" onmouseover="document.box.src='../images/surprise.gif'" onmouseout="document.box.src='../images/box.gif'">
+    <img alt="" src="../images/box.gif" name="box"/>
+</a>
+
+</body>
+</html>

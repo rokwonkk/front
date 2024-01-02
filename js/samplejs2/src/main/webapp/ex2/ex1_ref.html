@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>배경 화면의 설정</h1>
+
+<br/>
+
+<button onclick="document.body.style.backgroundColor='red'">빨강</button>
+<button onclick="document.body.style.backgroundColor='green'">초록</button>
+<button onclick="(ColorSet('파랑'))">파랑</button>
+<button onclick="(ColorSet('주황'))">주황</button>
+<button onclick="document.body.style.backgroundColor='black'">검정</button>
+<button onclick="document.body.style.backgroundColor='white'">흰색</button>
+
+<script>
+    function ColorSet( color ){
+        if(color === "파랑"){
+            document.body.style.backgroundColor="blue";
+        } else if(color === "주황"){
+            document.body.style.backgroundColor="orange";
+        }
+    }
+</script>
+
+</body>
+</html>

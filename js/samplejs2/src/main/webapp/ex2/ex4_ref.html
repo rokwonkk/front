@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>미술관 및 박물관의 링크</h1>
+<label for="links"></label>
+<select id="links" onchange="goUrl()">
+    <option value="">대상을 선택</option>
+    <option value="">-----미술관-----</option>
+    <option value="http://sema.seoul.go.kr">서울 시립 미술관</option>
+    <option value="http://www.mca.go.kr">국립 현대 미술관</option>
+    <option value="http://sac.or.kr">예술의 전당</option>
+    <option value="">-----박물관-----</option>
+    <option value="http://museum.go.kr">국립 중앙 박물관</option>
+    <option value="http://museum.seoul.kr">서울 역사 박물관</option>
+    <option value="http://nfm.go.kr">국립 민속 박물관</option>
+</select>
+<script>
+    const goUrl = () => {
+        // alert('goUrl');
+
+        // select index
+        let selectIndex = document.getElementById("links").selectedIndex;
+        // alert(selectIndex);
+
+        //value
+        //Value 얻어오기 방법 1
+        /*let url = document.getElementById("links").value;
+        // alert(url);
+
+        if(url !== ""){
+            // alert(url);
+            window.open(url);
+        }*/
+        //Value 얻어오기 방법 2
+        let url = document.getElementById("links").options[selectIndex].value;
+        if(selectIndex !== 0 && selectIndex !== 1 && selectIndex !== 5){
+            window.open(url);
+        }
+    }
+</script>
+</body>
+</html>

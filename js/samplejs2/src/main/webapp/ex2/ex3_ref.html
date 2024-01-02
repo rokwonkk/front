@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>환영합니다</h1>
+현재 시각은<input type="text" id="timebox" size="20" readonly> 입니다.
+<br/><br/>
+<p>현재 시각은 <span id="timeboxs"> 입니다</span></p>
+<script>
+    function nowtime(){
+        let now = new Date();
+
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let second = now.getSeconds();
+
+        console.log(hour + ":" + minute + ":" + second);
+
+        if (hour < 10){
+            hour = "0" + hour;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        if (second < 10) {
+            second = "0" + second;
+        }
+
+        document.getElementById("timebox").value = hour + ":" + minute + ":" + second;
+        document.getElementById("timeboxs").innerHTML = hour + ":" + minute + ":" + second;
+    }
+
+    setInterval("nowtime()", 1000);
+</script>
+</body>
+</html>

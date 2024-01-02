@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        td, th {
+            width: 80px;
+            height: 20px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        td input {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>배열의 연산</h1>
+<table border="1" align="center">
+    <tr>
+        <th>첨자</th>
+        <th>a</th>
+        <th>b</th>
+        <th>a*b를 계산</th>
+    </tr>
+    <tr>
+        <th>0</th>
+        <td>
+            <input type="text" class="a"/>
+        </td>
+        <td>
+            <input type="text" class="b"/>
+        </td>
+        <td>
+            <button onclick="btnClick(4)">계산결과</button>
+        </td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td><input type="text" class="a"/></td>
+        <td><input type="text" class="b"/></td>
+        <td>
+            <button onclick="btnClick(5)">계산결과</button>
+        </td>
+    </tr>
+    <tr>
+        <th>2</th>
+        <td><input type="text" class="a"/></td>
+        <td><input type="text" class="b"/></td>
+        <td>
+            <button onclick="btnClick(6)">계산결과</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function btnClick(value) {
+        let th = document.getElementsByTagName("th")[value].innerText;
+
+        let a, b;
+        if (th === "0") {
+            a = document.getElementsByClassName("a")[th].value;
+            b = document.getElementsByClassName("b")[th].value;
+        } else if (th === "1") {
+            a = document.getElementsByClassName("a")[th].value;
+            b = document.getElementsByClassName("b")[th].value;
+        } else if (th === "2") {
+            a = document.getElementsByClassName("a")[th].value;
+            b = document.getElementsByClassName("b")[th].value;
+        }
+        alert(a * b);
+    }
+</script>
+
+</body>
+</html>

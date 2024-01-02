@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- root tag -->
+<head><!-- html child node -->
+
+    <!-- head child node -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body> <!-- html child node -->
+
+<!-- body child node -->
+<h3 id="intro">제목입니다</h3>
+<p id="demo">문장입니다</p>
+
+<button type="button" onclick="func()">버튼</button>
+<script>
+    function func() {
+        // let intro = document.getElementById("intro").innerHTML;
+        // let intro = document.getElementById("intro").childNodes[0].nodeValue;
+        // alert(intro);
+
+        let demo = document.getElementById("demo").childNodes[0].nodeValue;
+        alert(demo);
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+<select id="car">
+    <option>benz</option>
+    <option>bmw</option>
+    <option>volvo</option>
+</select>
+
+<button type="button" onclick="car()">선택</button>
+<script>
+    function car(){
+        let cars = document.getElementById("car").childNodes;
+        alert(cars[3].text);
+    }
+</script>
+
+<br/><br/>
+
+<!-- 태그추가: createElement -->
+<!-- appendChild(뒤에추가), insertChild(앞에추가) -->
+<div id="div1">
+    <p id="p1">첫번째 p 태그</p>
+    <p id="p2">두번째 p 태그</p>
+</div>
+
+<button type="button" onclick="append()">(뒤에)추가</button>
+<button type="button" onclick="insert()">(앞에)추가</button>
+
+<script>
+    function append(){
+        let pTag = document.createElement('p');                     //<p></p>
+        let textNode = document.createTextNode("새로운 태그");      //새로운 태그
+
+        pTag.appendChild(textNode);                                 //<p>새로운 태그</p>
+
+        // let text = "new 태그";
+        // pTag.innerHTML = text;
+
+        let div1 = document.getElementById("div1");                 //추가할 태그
+        div1.appendChild(pTag);
+    }
+    function insert(){
+        let h3Tag = document.createElement("h3");
+        let textNode = document.createTextNode("새로운 h3 태그");      //새로운 h3 태그
+
+        h3Tag.appendChild(textNode);
+
+        let div1 = document.getElementById("div1");
+        let p2 = document.getElementById('p2');
+
+        div1.insertBefore(h3Tag, p2);
+    }
+</script>
+
+<br/><br/>
+<hr/>
+<br/>
+
+<input type="text" value="hello"><br/>
+<input type="text" value="world"><br/>
+<input type="text" value="success"><br/>
+<input type="text" value="i can do it"><br/>
+
+<br/>
+
+<button type="button" onclick="nodelist()">nodelist</button>
+
+<script>
+    function nodelist(){
+        let nodelist = document.getElementsByTagName("input");
+        // alert(nodelist.length);
+        nodelist[3].value = "안녕하세요";
+    }
+</script>
+
+</body>
+</html>

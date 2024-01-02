@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        td, th{
+            width: 80px;
+            height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>단가 x 수량 일람표</h1>
+<table border="1" align="center">
+    <tr>
+        <th>개수</th>
+        <th>제품 A</th>
+        <th>제품 B</th>
+        <th>상품 C</th>
+    </tr>
+    <tr>
+        <th class="count">1</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">2</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">3</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">4</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">5</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">6</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">7</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">8</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">9</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th class="count">10</th>
+        <td class="a">
+            1
+        </td>
+        <td class="b">
+            2
+        </td>
+        <td class="c">
+            3
+        </td>
+    </tr>
+</table>
+
+<script>
+    let count = document.getElementsByClassName("count").length;
+    for (let i=1; i <= count; i++){
+        document.getElementsByClassName("a")[i-1].innerHTML = (300 * i) + "원";
+        document.getElementsByClassName("b")[i-1].innerHTML = (450 * i) + "원";
+        document.getElementsByClassName("c")[i-1].innerHTML = (520 * i) + "원";
+    }
+</script>
+
+</body>
+</html>

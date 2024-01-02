@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>문제</h1>
+사나이들의 영화인 탑건은 군인 영화입니다. 그러면 육군,해군,공군 중 어느 군의 영화일까요?
+<br/><br/>
+<div id="div1">
+    <button type="button" onclick="append()" value="click">답을 보다</button>
+</div>
+<br/>
+버튼을 한 번 클릭하면 힌트가 표시됩니다.
+<br/>
+버튼을 두 번 클릭하면 답이 표시됩니다.
+<script>
+
+    let clicks = 0;
+    function append() {
+
+        if (clicks === 0) {
+            let pTag = document.createElement('p');                     //<p></p>
+            let textNode = document.createTextNode("바다에서 맞짱을 뜹니다.");      //새로운 태그
+
+            pTag.appendChild(textNode);                                 //<p>새로운 태그</p>
+
+            let div1 = document.getElementById("div1");                 //추가할 태그
+            div1.appendChild(pTag);
+        } else if (clicks === 1)  {
+            let pTag = document.createElement('p');                     //<p></p>
+            let textNode = document.createTextNode("정답은 해군 입니다.");      //새로운 태그
+
+            pTag.appendChild(textNode);                                 //<p>새로운 태그</p>
+
+            let div1 = document.getElementById("div1");                 //추가할 태그
+            div1.appendChild(pTag);
+        }
+        clicks++
+    }
+</script>
+
+</body>
+</html>

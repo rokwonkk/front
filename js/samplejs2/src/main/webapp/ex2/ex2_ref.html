@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+<input type="checkbox" id="eng"/>영어(소문자)로 답한다<br/><br/>
+
+답:&nbsp;<input type="text" id="answer" size="20" placeholder="답을 입력">
+
+<button type="button" onclick="answerClick()">답을 첵크</button>
+
+<script type="text/javascript">
+function answerClick() {
+	// alert('answerClick');
+
+	let eng = document.getElementById('eng').checked;	// true/false;
+	// alert(eng);
+	let answer = document.getElementById('answer').value;
+	// alert(answer);
+
+	// 빈칸검사!
+	if(answer.trim() == ''){
+		alert('답을 입력해 주십시오');
+		document.getElementById('answer').value = '';
+		return;
+	}
+
+	if(eng === true){	// 영어
+		if(answer === "apple" || answer === "Apple" || answer === "APPLE"){
+			alert('정답입니다');
+		}else{
+			alert('정답이 아닙니다');
+		}
+	}
+	else{		// 한글
+		if(answer === "사과" || answer === "능금"){
+			alert('정답입니다');
+		}else{
+			alert('정답이 아닙니다');
+		}
+	}
+}
+</script>
+ -->
+
+<form name="frm">
+    <input type="checkbox" id="eng" name="eng" class="eng" />영어(소문자)로 답한다<br/><br/>
+
+    답:&nbsp;<input type="text" name="answer" size="20" placeholder="답을 입력">
+
+    <button type="button" onclick="answerClick()">답을 첵크</button>
+</form>
+
+<script type="text/javascript">
+    // es6
+    const answerClick = () => {
+//	alert('answerClick');
+
+        let eng = document.frm.eng.checked;
+        // alert(eng);
+
+        let answer = document.frm.answer.value;
+        // alert(answer);
+
+
+        if(eng === true){	// 영어
+            if(answer === "apple" || answer === "Apple" || answer === "APPLE"){
+                alert('정답입니다');
+            }else{
+                alert('정답이 아닙니다');
+            }
+        }
+        else{		// 한글
+            if(answer === "사과" || answer === "능금"){
+                alert('정답입니다');
+            }else{
+                alert('정답이 아닙니다');
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>다음 생일까지 남은 일수</h1>
+다음 버튼을 클릭하여 생일을 입력하면,<br/>
+다음 생일까지 남은 일수를 볼 수 있습니다.(prompt를 사용)
+<br/><br/>
+
+<button type="button" onclick="birth()">생일을 입력</button>
+<br/><br/>
+
+남은 일수 <span id="days"></span>
+<script type="text/javascript">
+    function birth() {
+        //출력
+        // alert('');
+
+        //입력
+        // prompt('제목');
+
+        let birthMonth = prompt("생일 월을 입력해주십시오(1 ~ 12)");
+        let birthDay = prompt("생일 날짜를 입력해주십시오(1 ~ 31)");
+
+        // console.log(birthMonth + "/" + birthDay);
+
+        //현재 날짜와 비교
+        //오늘
+        let today = new Date();
+        //내생일
+        let mybirth = new Date();
+
+        //자신의 생일을 저장
+        mybirth.setMonth(birthMonth - 1);
+        mybirth.setDate(birthDay);
+
+//                          자신의생일   -   오늘
+        let mSecond = mybirth.getTime() - today.getTime();
+        //-값이 나오는 경우는 지난 경우
+        // console.log(mSecond);
+
+        //생일이 지난 경우
+        if (mSecond < 0) {
+            let birthYear = mybirth.getFullYear();
+            //다음년도
+            mybirth.setFullYear(birthYear + 1);
+
+            mSecond = mybirth.getTime() - today.getTime();
+        }
+        let days;
+        if(mSecond === 0){
+            days = "축하합니다 생일은 오늘입니다.";
+        } else {
+            days = mSecond / (24 * 60 * 60 * 1000);
+        }
+        // console.log(days)
+
+        document.getElementById("days").innerHTML = days;
+    }
+</script>
+</body>
+</html>

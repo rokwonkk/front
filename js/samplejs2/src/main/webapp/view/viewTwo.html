@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>two</title>
+</head>
+<body bgcolor="green">
+
+<h1>view two</h1>
+
+<input type="button" value="이전으로" onclick="history.back();"/>
+
+<input type="button" value="현제페이지갱신" onclick="location.reload()"/>
+
+<input type="button" value="진행" onclick="history.forward()"/>
+
+<input type="button" onclick="goPage()" value="view three로 이동">
+<script>
+    function goPage(){
+        location.href = "viewThree.html";
+    }
+</script>
+</body>
+</html>

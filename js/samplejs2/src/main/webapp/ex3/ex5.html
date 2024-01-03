@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th {
+            width: 50px;
+            height: 40px;
+        }
+
+        td {
+            width: 190px;
+            text-align: center;
+        }
+
+        .name{
+            color: white;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>포털 사이트</h1>
+<p>"열기" 버튼을 클릭하면 해당 홈페이지를 새 창에서 볼 수 있습니다.</p>
+<br/>
+<table border="1">
+    <tr>
+        <th class="name">네이버</th>
+        <td id="naver">http://www.naver.com</td>
+        <th>
+            <button class="btn" onclick="goLink(this.value)" value="naver">열기</button>
+        </th>
+    </tr>
+    <tr>
+        <th class="name">다음</th>
+        <td id="daum">http://www.daum.net</td>
+        <th>
+            <button class="btn" onclick="goLink(this.value)" value="daum">열기</button>
+        </th>
+    </tr>
+    <tr>
+        <th class="name">줌</th>
+        <td id="zum">http://zum.com</td>
+        <th>
+            <button class="btn" onclick="goLink(this.value)" value="zum">열기</button>
+        </th>
+    </tr>
+</table>
+
+<script>
+function goLink( value ){
+    let url;
+
+    if (value === "naver"){
+        url = document.getElementById("naver").innerText;
+    } else if (value === "daum"){
+        url = document.getElementById("daum").innerText;
+    } else if (value === "zum"){
+        url = document.getElementById("zum").innerText;
+    }
+
+    window.open(url);
+}
+</script>
+
+</body>
+</html>

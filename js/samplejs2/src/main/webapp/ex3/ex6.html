@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin-left: 30px;
+            color: #fff;
+            background-color: black;
+        }
+        input {
+            float: left;
+            margin-right: 10px;
+        }
+        #img {
+            border: 10px solid orange;
+        }
+    </style>
+</head>
+<body>
+
+<h1>사진들</h1>
+
+<br/>
+
+<input alt="" type="image" id="img" src="../images/meiji01.jpg"/>
+사진의선택
+<br/>
+<label for="img1"></label>
+<select id="img1" onchange="changeImg(this.value)">
+    <option>사진의 선택</option>
+    <option value="01">메이지건물</option>
+    <option value="02">건물복도</option>
+    <option value="03">성당밖</option>
+    <option value="04">성당안</option>
+</select>
+
+<script>
+function changeImg(value){
+    // alert(value);
+    document.getElementById("img").setAttribute("src","../images/meiji"+value+".jpg");
+}
+</script>
+</body>
+</html>

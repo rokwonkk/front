@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>배열의 연산</h1>
+<table border="1">
+    <col width="50"/>
+    <col width="80"/>
+    <col width="80"/>
+    <col width="100"/>
+    <tr>
+        <th>첨자</th>
+        <th>a</th>
+        <th>b</th>
+        <th>a x b</th>
+    </tr>
+    <tr>
+        <th>0</th>
+        <td id="n01">5</td>
+        <td id="n02">33</td>
+        <td>
+            <button type="button" onclick="multi(0)">계산결과</button>
+        </td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td id="n11">12</td>
+        <td id="n12">14</td>
+        <td>
+            <button type="button" onclick="multi(1)">계산결과</button>
+        </td>
+    </tr>
+    <tr>
+        <th>2</th>
+        <td id="n21">18</td>
+        <td id="n22">65</td>
+        <td>
+            <button type="button" onclick="multi(2)">계산결과</button>
+        </td>
+    </tr>
+</table>
+<script>
+    let nodeNum = document.getElementsByTagName("td");
+    //alert(nodeNum[2].innerHTML);
+
+    let a = new Array(3);
+    let b = new Array(3);
+
+    for (let i = 0; i < a.length; i++) {
+        a[i] = nodeNum[(3 * i)].innerHTML;
+        a[i] = nodeNum[1 + (3 * i)].innerHTML;
+    }
+
+    function multi(index) {
+        // let result = parseInt(a[index]) * parseInt(b[index]);
+        let result = Number(a[index]) * Number(b[index]);
+        alert("결과는 : " + result);
+    }
+</script>
+</body>
+</html>

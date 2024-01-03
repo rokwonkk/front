@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>단가 x 수량 일람표</h1>
+<table border="1" id="mytable">
+    <thead>
+    <tr>
+        <th>개수</th>
+        <th>제품 A</th>
+        <th>제품 B</th>
+        <th>상품 C</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script>
+    //외부(file, db)에서 산출한 데이터
+    let a = [23, 43, 11, 34, 56, 22];
+    let b = [11, 24, 55, 41, 71, 11];
+    let c = [31, 14, 25, 91, 21, 33];
+
+    let tbody = document.getElementById("mytable");
+
+    for (let i = 0; i < a.length; i++) {
+
+        let tr = document.createElement("tr");  //<tr></tr>
+
+        let th = document.createElement("th");
+        th.appendChild(document.createTextNode(1 + i)); //<th>1</th>
+
+        let td1 = document.createElement("td");
+        // td1.appendChild(document.createTextNode( a + "원" )); //<th>300원</th>
+        td1.innerHTML = a[i] + "원";
+
+        let td2 = document.createElement("td");
+        td2.appendChild(document.createTextNode(b[i] + "원")); //<th>450원</th>
+
+        let td3 = document.createElement("td");
+        td3.appendChild(document.createTextNode(c[i] + "원")); //<th>520원</th>
+
+        //td -> tr 추가
+        tr.appendChild(th);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+
+        tbody.appendChild(tr);
+    }
+</script>
+
+</body>
+</html>

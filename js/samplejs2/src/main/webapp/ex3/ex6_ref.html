@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin-left: 30px;
+            color: #fff;
+            background-color: black;
+        }
+        input {
+            float: left;
+            margin-right: 10px;
+        }
+        #img {
+            border: 10px solid orange;
+        }
+    </style>
+</head>
+<body>
+
+<h1>영화들</h1>
+<div align="center">
+<table>
+    <tr>
+        <td>
+            <img alt="" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87945/87945_320.jpg" name="photo" border="3" width="360" height="440"/>
+        </td>
+        <td valign="top" style="padding-left: 20px">
+            영화선택<br/>
+            <form name="frm">
+            <select name="movies" onchange="changeMovie()">
+                <option>영화제목</option>
+                <option value="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87945/87945_320.jpg">위시</option>
+                <option value="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87717/87717_320.jpg">외계+인 2부</option>
+                <option value="../movies/87907_320.jpg">노량-죽음의 바다</option>
+                <option value="http://localhost:8080/samplejs2/movies/87554_320.jpg">서울의 봄</option>
+            </select>
+            </form>
+        </td>
+    </tr>
+</table>
+</div>
+<script>
+function changeMovie(){
+    let index = document.frm.movies.selectedIndex;
+    //alert(index)
+
+    if (index !== 0){
+        document.photo.src = document.frm.movies.options[index].value;
+    }
+}
+</script>
+</body>
+</html>

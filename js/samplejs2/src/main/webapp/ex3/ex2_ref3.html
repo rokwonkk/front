@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>단가 x 수량 일람표</h1>
+<table border="1" id="mytable">
+    <thead>
+    <tr>
+        <th>개수</th>
+        <th>제품 A</th>
+        <th>제품 B</th>
+        <th>상품 C</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+<script>
+    let a = [23, 43, 11, 34, 56, 22];
+    let b = [11, 24, 55, 41, 71, 11];
+    let c = [31, 14, 25, 91, 21, 33];
+
+    let tabledata = "";
+
+    for (let i = 0; i < a.length; i++) {
+
+        tabledata += "<tr>";
+        tabledata += "   <th>" + (1 + i) + "</th>";
+        tabledata += "   <td>" + a[i] + "원" + "</td>";
+        tabledata += "   <td>" + b[i] + "원" + "</td>";
+        tabledata += "   <td>" + c[i] + "원" + "</td>";
+
+        tabledate += "</tr>";
+
+        document.getElementById("tbody").innerHTML = tabledata;
+    }
+</script>
+
+</body>
+</html>

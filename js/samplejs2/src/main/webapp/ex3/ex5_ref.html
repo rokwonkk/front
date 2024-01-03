@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>포털 사이트</h1>
+<p>"열기" 버튼을 클릭하면 해당 홈페이지를 새 창에서 볼 수 있습니다.</p>
+<br/>
+<table border="1">
+    <tr>
+        <th>네이버</th>
+        <td>http://www.naver.com</td>
+        <td>
+            <button type="button" onclick="goLink(this.value)" value="naver">열기</button>
+        </td>
+    </tr>
+    <tr>
+        <th>다음</th>
+        <td>http://www.daum.net</td>
+        <td>
+            <button type="button" onclick="goLink(this.value)" value="daum">열기</button>
+        </td>
+    </tr>
+</table>
+<script>
+
+    let url = document.getElementsByTagName("td"); // 0 - 2
+
+    function goLink(value) {
+        if (value === "naver") {
+            location.href = url[0].innerHTML;
+        } else if (value === "daum") {
+            location.href = url[2].innerHTML;
+        }
+    }
+</script>
+</body>
+</html>

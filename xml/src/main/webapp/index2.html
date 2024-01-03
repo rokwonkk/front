@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    let xmlStr =
+        "<bookstore>" +      //root , node 2개
+        "<book>" +
+        "<title>탈무드</title>" +
+        "<author>man</author>" +
+        "<year>2009/02/29</year>" +
+        "</book>" +
+        "<book>" +
+        "<title>삼국지</title>" +
+        "<author>woman</author>" +
+        "<year>2012/04/11</year>" +
+        "</book>" +
+        "</bookstore>";
+    // alert(xmlStr);
+
+    let parser, xmlDoc;
+
+    parser = new DOMParser();   //파싱(parsing)을 할 수 있는 클래스(class)
+
+    xmlDoc = parser.parseFromString(xmlStr, "text/html");
+
+    // alert(xmlDoc);
+    document.getElementById("demo").innerHTML
+        // = xmlDoc.getElementsByTagName("book").length;                                    //2
+        // = xmlDoc.getElementsByTagName("book")[0].childNodes.length;                      //3
+        // = xmlDoc.getElementsByTagName("book")[0].childNodes[0].nodeName;                 //title
+        // = xmlDoc.getElementsByTagName("book")[0].childNodes[1].nodeName;                 //author
+        = xmlDoc.getElementsByTagName("book")[0].childNodes[0].childNodes[0].nodeValue;  //탈무드
+</script>
+</body>
+</html>

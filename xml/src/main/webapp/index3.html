@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            // nodeValue(this);
+            // nodeName(this);
+            childNode(this);
+        }
+
+    };
+
+    // xhttp.open("GET", "client.xml", true);
+    xhttp.open("GET", "http://localhost:8080/xml/client.xml", true);
+    xhttp.send();
+
+    function nodeValue(xhttp) {
+        let number, name;
+        let numbertxt, nametxt;
+        let xmlDoc;
+
+        numbertxt = nametxt = "";
+        xmlDoc = xhttp.responseXML;
+        console.log(xmlDoc);
+
+        number = xmlDoc.getElementsByTagName("번호");
+        name = xmlDoc.getElementsByTagName("이름");
+        console.log(number);
+        console.log(number.length);
+
+        for (let i = 0; i < number.length; i++) {
+            numbertxt += number[i].childNodes[0].nodeValue + "<br/>";
+            nametxt += name[i].childNodes[0].nodeValue + "<br/>";
+        }
+
+        document.getElementById("demo").innerHTML = numbertxt + nametxt;
+    }
+
+    function nodeName(xhttp) {
+        let arr, txt;
+        txt = "";
+        let xmlDoc;
+
+        xmlDoc = xhttp.responseXML;
+        // arr = xmlDoc.documentElement.childNodes;    //root
+        arr = xmlDoc.getElementsByTagName("고객")[0].childNodes;
+        // console.log(arr)
+
+        for (let i = 0; i < arr.length; i++) {
+            // console.log(arr[i].nodeName);
+            // console.log(arr[i].nodeType);
+            if (arr[i].nodeType === 1) {
+                txt += arr[i].nodeName + "<br/>";
+            }
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+
+    function childNode(xhttp) {
+        let arr, txt;
+        let xmlDoc;
+
+        txt = "";
+
+        xmlDoc = xhttp.responseXML;
+        arr = xmlDoc.getElementsByTagName("고객")[0];
+
+        let len = arr.childNodes.length;
+        console.log(len);
+
+        let fchild = arr.firstChild;
+
+        for (let i = 0; i < len; i++) {
+            if(fchild.nodeType === 1){
+                txt += i + " " + fchild.nodeName + "<br/>";
+            }
+            fchild = fchild.nextSibling;
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<button type="button" onclick="loadXmlDoc()">내용 갱신</button>
+
+<script>
+
+    let xhttp = new XMLHttpRequest();
+
+    function loadXmlDoc(){
+
+        xhttp.onreadystatechange = function (){
+            console.log('xhttp.onreadystatechange');
+            // console.log(this.responseText);
+            console.log(this.readyState);
+            console.log(this.status);
+
+            if (this.readyState === 4 && this.status === 200){ //작업완료
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
+        }
+            //통신방식, 읽어올파일, 동기/비동기
+        xhttp.open("GET", "test.txt", true);
+        console.log('xhttp.open');
+                xhttp.send()
+        console.log('xhttp.send');
+    }
+
+    /*
+        readyState : 진행상태
+        0 : open() 메소드를 실행하기 전
+        1 : loading 중...
+        2 : loading 완료
+        3 : server 처리중...
+        4 : server 완료
+
+        status : (처리)상태
+        200 : 성공
+        403 : 접근금지
+        404 : 찾을 수 없음
+        500 : 구문 에러
+     */
+</script>
+
+</body>
+</html>

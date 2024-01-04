@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    CGV 에서 1 ~ 5 위 영화
+            XML     tag value
+            Json    key value
+
+            제목, 감독, 배우, 개봉일
+
+            위시, [크리스 벅, 폰 비라선손], [아리아나 데보스, 크리스 파인, 알란 터딕], 2024.01.03
+            외계+인 2부, 최동훈, [류준열, 김태리, 이하늬, 염정아, 조우진, 김의성, 진선규],2024.01.10
+            노량-죽음의 바다, 김한민, [김윤석, 백윤식,정재영,허준호,김성규,이규형,이무생,최덕문,안보현,박명훈,박훈,문정희],2023.12.20
+            서울의 봄, 김성수, [황정민, 정우성, 이성민, 박해준, 김성균] 2023.11.22
+            크레센도, 헤더 월크, 임윤찬, 안나 게뉴시네, 드미트리 초니, 마린 알솝, 2023.12.20
+
+            시각화 -> 테이블
+
+            제목, 감독, 배우, 개봉일
+-->
+
+<div id="movies">
+</div>
+
+<script>
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            xmlFunc(this);
+        }
+    };
+
+    xhttp.open("GET", "./client.xml", true);    // == ajax
+    xhttp.send();
+
+    function xmlFunc(xhttp) {
+        let xmlDoc = xhttp.responseXML;
+
+        // alert(xmlDoc);
+
+        // root (tag) 취득
+        let rootTagName = xmlDoc.documentElement.nodeName;
+        // alert(rootTagName);
+
+        // node 명을 취득
+        let nodeNameArr = xmlDoc.documentElement.childNodes;
+        // alert(nodeNameArr);
+
+        let nodeName;
+
+        //  node list를 확인
+        for (let i = 0; i < nodeNameArr.length; i++) {
+            if (nodeNameArr[i].nodeType === 1) {
+                nodeName = nodeNameArr[i].nodeName;
+                console.log(nodeName);
+            }
+        }
+
+        // table 준비
+        let out = "<table border='1'>";
+        out += "<col width='50'><col width='100'><col width=100'><col width='100'><col width='100'>";
+        out += "<tr>";
+        out += "<th>번호</th>>";
+
+        //comlumn 명을 취득
+        columnName = xmlDoc.getElementsByTagName(nodeName)[0];
+
+        let child = columnName.firstChild;
+        // alert(columnName.childNodes.length); //9
+
+        for (let i = 0; i < columnName.childNodes.length; i++) {
+            if (child.nodeType === 1) {
+                out += "<th>" + child.nodeName + "</th>";
+                console.log(child.nodeName);
+            }
+            child = child.nextSibling;
+        }
+        out += "<tr>";
+
+        // data 출력
+        let len = xmlDoc.getElementsByTagName(nodeName).length;
+
+        for (let i = 0; i < len; i++) {
+            out += "<tr>";
+            out += "<th>" + (i + 1) + "</th>";
+
+            let dataArr = xmlDoc.getElementsByTagName(nodeName)[i];
+
+            child = dataArr.firstChild;
+
+            for (let j = 0; j < dataArr.childNodes.length; j++) {
+                if (child.nodeType === 1) {
+                    out += "<td>" + child.childNodes[0].nodeValue + "</td>";
+                }
+                child = child.nextSibling;
+            }
+            out += "</tr>";
+        }
+        document.getElementById("movies").innerHTML = out;
+    }
+</script>
+
+</body>
+</html>

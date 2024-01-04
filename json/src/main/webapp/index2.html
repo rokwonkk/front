@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            jsonFunc(this);
+        }
+    };
+
+    xhttp.open("GET", "./NBAjson.json", true);
+    xhttp.send();
+
+function jsonFunc( xhttp ){
+
+    let str = xhttp.responseText;
+
+    // alert(str);
+
+    let json = JSON.parse(str);
+
+    document.getElementById("demo").innerHTML
+        // = json.quiz.sport.q1.question;
+        // = json.quiz["sport"].q1.question;
+
+        // = json.quiz.sport.q1.options[2];
+        // = json.quiz.maths.q1.answer;
+        = json.quiz["maths"].q1.answer;
+}
+
+</script>
+</body>
+</html>

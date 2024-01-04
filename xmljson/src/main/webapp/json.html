@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="movies"></div>
+
+<script>
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            jsonFunc(this);
+        }
+    };
+
+    xhttp.open("GET", "./client.json", true);    // == ajax
+    xhttp.send();
+
+    function jsonFunc(xhttp) {
+        let text = xhttp.responseText;
+        let json = JSON.parse(text);
+        // alert(JSON.stringify(json));
+
+        let out = "<table border='1'>";
+        out += "<col width='50'><col width='100'><col width=100'><col width='100'><col width='100'>";
+        out += "<tr>";
+        out += "<th>번호</th>>";
+
+        // 타이틀
+        for (key in json[0]) { //key 값을 취득
+            out += "<th>" + key + "</th>";
+        }
+
+        //  data
+        for (let i = 0; i < json.length; i++) {
+            out += "<tr>"
+
+            out += "<th>" + (i + 1) + "</th>"
+            out += "<td>" + json[i].title + "</td>";
+            out += "<td>" + json[i].director + "</td>";
+            out += "<td>" + json[i].actor + "</td>";
+            out += "<td>" + json[i].release + "</td>";
+            out += "</tr>"
+        }
+
+        out += "</tr>";
+        out += "</table>";
+
+        document.getElementById("movies").innerHTML = out;
+    }
+
+</script>
+
+</body>
+</html>

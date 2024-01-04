@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+let xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function () {
+	
+	if(this.readyState == 4 && this.status == 200){
+		nodeValueFunc(this);
+	}	
+}
+
+xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://openapi.seoul.go.kr:8088/sample/xml/SebcBusStopEng/1/5/", this);
+xhttp.send();
+
+function nodeValueFunc( xml ) {
+//	alert('nodeValueFunc');
+
+	let arr, txt, xmlDoc;
+	txt = "";
+	
+	xmlDoc = xml.responseXML;
+	
+	arr = xmlDoc.getElementsByTagName("NAME_ENG");
+	for (var i = 0; i < arr.length; i++) {
+		txt += arr[i].childNodes[0].nodeValue + "<br>";
+	}
+	
+	document.getElementById("demo").innerHTML = txt;	
+}
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<movies>
+    <movie>
+        <title>WISH</title>
+        <director>크리스 벅</director>
+        <actor>아리아나 데보스</actor>
+        <release>2024.01.03</release>
+    </movie>
+    <movie>
+        <title>외계+인 2부</title>
+        <director>최동훈</director>
+        <actor>김태리</actor>
+        <release>2024.01.10</release>
+    </movie>
+    <movie>
+        <title>노량-죽음의 바다</title>
+        <director>김한민</director>
+        <actor>김윤석</actor>
+        <release>2023.12.20</release>
+    </movie>
+    <movie>
+        <title>서울의 봄</title>
+        <director>김성수</director>
+        <actor>황정민</actor>
+        <release>2024.11.22</release>
+    </movie>
+    <movie>
+        <title>더 퍼스트 슬램덩크</title>
+        <director>이노우에 다케히코</director>
+        <actor>강백호</actor>
+        <release>2024.01.04</release>
+    </movie>
+</movies>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+        JSON: Java Script Object Notation
+                                    표기법
+        형식 : key:value == hashmap(java)
+        xml형식 : <tag>value</tag>
+
+        array -> json
+
+        [ "홍길동", 24, 171.2 ] -> {"name":"홍길동", "age":24, "Height":171.2}
+
+        web(front-end)              java(back-end)
+                        ---------->
+<!---------
+-->
+
+<p id="demo"></p>
+
+<script>
+    let arr = ["홍길동", 24, 171.2];
+
+    let json = {"name": "홍길동", "age": 24, "height": 171.2}
+    console.log(json.name);
+    console.log(json.age);
+    console.log(json.height);
+
+    let studentJson = [
+        {
+            "name": "홍길동",
+            "age": 24
+        },
+        {
+            "name": "성춘향",
+            "age": 16
+        },
+        {
+            "name": "일지매",
+            "age": 22
+        },
+    ];
+    document.getElementById("demo").innerHTML = studentJson[1].name;
+    document.getElementById("demo").innerHTML = studentJson[2].age;
+
+    //string -> json, xml : parsing
+    //key 값은 반드시 문자열 형식으로 기입한다.
+    let text = '{ "name": "정수동" , "age":26, "주소":"춘천시"}' // json 이 아님
+
+    //string -> json : parsing
+
+    let jsonObj = JSON.parse(text);
+    //alert(jsonObj);
+    document.getElementById("demo").innerHTML = jsonObj.name;
+
+    //json -> string
+    let str = JSON.stringify(jsonObj);
+    alert(str);
+</script>
+</body>
+</html>

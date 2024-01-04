@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            jsonFunc(this)
+        }
+    };
+
+    xhttp.open("GET", "client.json", true);
+    xhttp.send();
+
+    function jsonFunc(xhhtp) {
+
+        // alert(xhttp.responseText);
+
+        let json = JSON.parse(xhttp.responseText);
+
+        // alert(json);
+        // alert(json.length);
+
+        let txt = "";
+
+        txt += json.server + "<br/>";
+
+        for (let i = 0; i < json.client.length; i++) {
+            txt +=
+                json.client[i].name + " " +
+                json.client[i].age + " " +
+                json.client[i].address + " " +
+                json.client[i].phone + "<br/>";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+</script>
+</body>
+</html>

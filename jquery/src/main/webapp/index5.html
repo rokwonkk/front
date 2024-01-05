@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+    <style>
+        .pcls{
+            color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+
+<p>ppp</p>
+
+<p id="demo">kkk</p>
+
+<button type="button">button</button>
+
+<script>
+
+    $(document).ready(function () {
+        $("button").click(function () {
+
+            //setter
+            $("p").css("background", "#0000ff");
+
+            //getter
+            let bcolor = $("p").css("background");
+            // alert(bcolor);
+
+            //jquery
+            // $('p').attr("id", "pid");   //set
+            // let id = $('p').attr("id"); //get
+
+            //js
+            // document.getElementById("demo").setAttribute("id", "pid");  //setter
+            // document.getElementById("demo").getAttribute("id");         //getter
+
+            /* 클래스 추가 둘중 하나 써도 됨 */
+            // $('p').attr("class", "pcls");
+            // $("p").addClass('pcls');
+
+            // $("p").removeClass("pcls");
+
+            $('p').prop('class', 'pcls');
+
+            // html(), text(), val(), css(), attr(), prop() 자주 쓰이는 함수
+        });
+    });
+
+</script>
+
+</body>
+</html>

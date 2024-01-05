@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"> </script>-->
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<!--
+        java script : client(front-end)
+        화면의 resource와 값을 취득, 설정.
+        DOM(getElementById, getElementsByTagName...)
+
+                        node.js
+        angular, react, vue
+
+        CSS : 디자인
+
+        Jquery : Java Script를 경량화 간략화
+                 비동기통신(ajax) 가능하다.
+
+        Jquery-UI : resource(button, input, slide, Datepicker)
+
+        형식 :
+                $( tag || id || class || name ).함수명(매개변수)
+
+                document.getElementById("id").value = "abc";    <- setter
+                $( "#id" ).val( "abc" );
+
+
+                let v = document.getElementById("id").value;            <- getter
+                let v = $( "#id" ).val();
+
+                innerHTML   === html()
+                inneText    === text()
+                value       ===  val()
+-->
+
+<p>여기가 p 태그 입니다.</p>
+
+<p id="demo">p tag id=demo</p>
+
+<p class="cls">p tag class=cls</p>
+
+<h3 class="cls">h3 tag class=cls</h3>
+<script>
+
+    /*let arrPtag = document.getElementsByTagName("p");
+
+    for (let i = 0; i < arrPtag.length; i++) {
+        arrPtag[i].innerHTML = "hello p tag";
+    }
+*/
+    //현제 페이지의 document를 다 읽고 이 함수를 실행해라
+    //태그 전체를 바꿀 때 유용함.
+    $(document).ready(function () {
+
+        //$("p").html("안녕하세요 p tag");   // innerHTML
+
+        // $("p").text("하이 p tag");           // innerText
+
+        // document.getElementById("demo").innerHTML = "<b>안녕하세요</b>";
+        // $("p").html("<b>안녕하세요</b> p tag");       //setter
+        // $("p").text("<b>안녕하세요</b> p tag");
+
+        // let demo = $("#demo").html();                //getter
+        // console.log(demo);
+
+        let ptag = $("p").text();
+        console.log(ptag);
+        console.log(ptag[0]);       //여
+        console.log(ptag.length);   //41
+
+        // $("#demo").html("건강하세요");    //setter
+
+        $(".cls").html("모두 새해 복 많이 받으세요");
+
+        let cls = $(".cls").html();
+        console.log(cls);
+
+    });
+
+</script>
+</body>
+</html>

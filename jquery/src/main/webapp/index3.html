@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<p>Hello</p>
+
+<div>
+    <p>World</p>
+
+    <p class="cls">I can do it</p>
+
+    <h3 class="cls">Never Change My Mind</h3>
+</div>
+
+<button type="button">p 태그 보이기</button>
+
+
+<script>
+    $(document).ready(function () {
+        /*
+                $("p").click(function () {
+                    alert('p tag click')
+                });
+        */
+        /*
+                $("div p").click(function () {     // == onclick
+                    alert('div in p tag click')
+                });
+        */
+        /*
+        $("div .cls").click(function () {
+            alert('div in cls click')
+        });
+        */
+        /*
+
+                $("div h3.cls").click(function () {
+                    alert('div in h3 in class cls click')
+                });
+        */
+
+                $(".cls").click(function () {
+                    // alert('cls');
+                    // $(".cls").attr("backgroundColor", "#ff0000");    //사용안됨
+                    // $(".cls").prop("backgroundColor", "#ff0000");    //사용안됨
+                    // $(".cls").css("backgroundColor", "#ff0000");
+
+                    $(this).css("background", "#ff0000");   // setter 현재 자신이 클릭한 부분의 주소값
+                    // alert(this);
+
+                    let color = $(this).css("background");  // getter
+                    alert(color);
+
+                    let str = $(this).html();
+                    // alert(str);
+                });
+        $("p").click(function () {
+            $(this).hide(5000);
+        });
+
+        $("button").click(function () {
+            $("p").show(5000);
+        });
+
+    });
+</script>
+</body>
+</html>

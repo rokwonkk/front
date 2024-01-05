@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<h1>사진들</h1>
+<img alt="성 자비에르 성당(외관)" src="../images/img01.jpg" picname="성 자비에르 성당(외관)">
+<img alt="성 자비에르 성당(내관)" src="../images/img02.jpg" picname="성 자비에르 성당(내관)">
+<img alt="낡은 건물" src="../images/img03.jpg" picname="낡은 건물">
+<img alt="가로등" src="../images/img04.jpg" picname="가로등">
+<br/><br/>
+<ol>
+<li>성 자비에르 성당(외관)</li>
+<li>성 자비에르 성당(내관)</li>
+<li>낡은 건물</li>
+<li>가로등</li>
+</ol>
+<script>
+    $("img").click(function () {
+        //let picturename = $(this).attr("alt");
+        let picturename = $(this).attr("picname");
+        alert(picturename);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<h1>Photo Library</h1>
+<p>기본 라인처리 color:green</p>
+<img alt="" class="pic" src="../images/p01.jpg">
+
+<h1>Life on the water</h1>
+이미지 클릭시 라인처리 color:red
+<br/><br/>
+<img alt="" class="photo" src="../images/photo1.jpg">
+<img alt="" class="photo" src="../images/photo2.jpg">
+
+<h1>RoomImage</h1>
+마우스 커서가 이미지 위로 이동하면, 이미지 변경
+<br/><br/>
+<img alt="" id="pic" src="../images/b_pic2.jpg">
+<script>
+
+    $(document).ready(function () {
+
+        // $(".pic").css("border","5px solid lightgreen"); //style="border:"
+/*
+        $(".pic").css(
+            {
+                "border":"solid 3px",
+                "border-color":"#ff0000"
+            }
+        );
+*/
+        $(".pic").css("border", "solid 3px");
+        $(".pic").css("border-color", "blue");
+
+        /*****************************************************************/
+
+        $(".photo").click(function () {
+            $(this).css("border", "5px solid red");
+        });
+
+        $("#pic").mouseover(function () {
+            $(this).attr("src", "../images/b_pic1.jpg");
+        });
+
+        $("#pic").mouseout(function () {
+            $(this).attr("src", "../images/b_pic2.jpg");
+        });
+    });
+
+</script>
+
+</body>
+</html>

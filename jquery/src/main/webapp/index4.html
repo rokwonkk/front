@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<table border="1">
+    <col width="50"><col width="150"><col width="150">
+    <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>나이</th>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td>홍길동</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <th>2</th>
+        <td>성춘향</td>
+        <td>16</td>
+    </tr>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $("tr").mouseover(function () { // == onmouseover
+            $(this).css("background", "#eeeeee");
+        });
+        $("tr").mouseout(function () { // == onmouseover
+            $(this).css("background", "#ffffff");
+        });
+
+        $("td").click(function () {
+            let td = $(this).text();
+            alert(td);
+        });
+    });
+</script>
+
+</body>
+</html>

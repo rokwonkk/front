@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+<!-- radio -->
+<ul type="none">
+    <li>
+        <label>
+            <input type="radio" name="fruit" value="사과">
+            사과
+        </label>
+    </li>
+    <li>
+        <label>
+            <input type="radio" name="fruit" value="배">
+            배
+        </label>
+    </li>
+    <li>
+        <label>
+            <input type="radio" name="fruit" value="키위">
+            키위
+        </label>
+    </li>
+</ul>
+
+<button type="button" id="choice">선택</button>
+<script>
+    $(document).ready(function () {
+        $('#choice').click(function () {
+
+            // getter
+            let fruit = $("input[name='fruit']:checked").val();
+            console.log(fruit);
+
+            //setter
+            $("input[name='fruit']").val(['키위']);
+
+        });
+    });
+</script>
+<br/><br/>
+
+<input type="checkbox" id="cb1" name="cb1">그림그리기
+<input type="checkbox" id="cb2" name="cb2">음악듣기
+<br/><br/>
+<button type="button" id="cb">체크</button>
+<script>
+
+    $("#cb").click(function () {
+        //getter
+        // let check = $("#cb1").is(":checked");
+        // alert(check);
+        let check2 = $('input:checkbox[name="cb2"]').is(":checked");
+        // alert(check2);
+
+        //setter
+        $("#cb1").prop("checked", true);            //제어부분은 왠만하면 prop로 사용할것
+        // $("#cb1").attr("checked", true);        // 안된다고 생각함
+    });
+
+</script>
+</body>
+</html>

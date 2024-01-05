@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+    <!--    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"> </script>-->
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<!--
+        java script : client(front-end)
+        화면의 resource와 값을 취득, 설정.
+        DOM(getElementById, getElementsByTagName...)
+
+                        node.js
+        angular, react, vue
+
+        CSS : 디자인
+
+        Jquery : Java Script를 경량화 간략화
+                 비동기통신(ajax) 가능하다.
+
+        Jquery-UI : resource(button, input, slide, Datepicker)
+
+        형식 :
+                $( tag || id || class || name ).함수명(매개변수)
+
+                document.getElementById("id").value = "abc";    <- setter
+                $( "#id" ).val( "abc" );
+
+
+                let v = document.getElementById("id").value;            <- getter
+                let v = $( "#id" ).val();
+
+                innerHTML   === html()
+                inneText    === text()
+                value       ===  val()
+-->
+
+<!--<p id="ptag">p tag id=ptag</p>
+
+<p onclick="pclick()">pclick</p>
+
+<script>
+
+    $("#ptag").click(function () {
+        alert("p tag click");
+    });
+
+    function pclick(){
+        alert("pclick");
+    }
+
+</script>-->
+<!--
+<button type="button">button</button>
+<br/><br/>
+<button type="button" id="btn">id button</button>
+<br/><br/>
+<input type="button" id="btn" value="id button">
+<br/><br/>
+<button type="button" class="btn">cls button</button>
+<br/><br/>
+<input type="button" class="btn" value="cls button">
+<script>
+    // $(document).ready(function () {     //문서가 준비되면 호출
+    //
+    // });
+
+    $(function () {         // 무조건 호출
+        // $("button").click(function () {
+        //     alert("button click");
+        // });
+
+        $("#btn").click(function () {
+            alert("id btn click");
+        });
+
+        $(".btn").click(function () {
+            alert("class btn click");
+        });
+
+    });
+</script>-->
+
+<button type="button" id="btn">id button</button>
+<script>
+    $(document).ready(function () {
+        /*
+
+                $("#btn").click(function () {
+                    alert('id button click');
+                });
+        */
+
+        /*
+                $("#btn").on("click", function () {
+                    alert('id button on click');
+                });
+        */
+
+        $("#btn").on("click", btnFunc);
+
+        function btnFunc() {
+            alert("btnFunc() 호출");
+        }
+    });
+</script>
+</body>
+</html>

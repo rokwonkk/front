@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<h1>Photo Library</h1>
+<p>기본 라인처리 color:green</p>
+<img alt="" id="img1" src="../images/p01.jpg">
+
+<h1>Life on the water</h1>
+이미지 클릭시 라인처리 color:red
+<br/><br/>
+<img alt="" id="img3" src="../images/photo1.jpg">
+<img alt="" id="img4" src="../images/photo2.jpg">
+
+<h1>RoomImage</h1>
+마우스 커서가 이미지 위로 이동하면, 이미지 변경
+<br/><br/>
+<img alt="" id="img5" src="../images/b_pic2.jpg">
+<script>
+
+    $(document).ready(function () {
+
+        $("#img1").css("border", "5px solid lightgreen");
+
+        $("#img3").click(function () {
+            $(this).css("border", "5px solid red");
+        });
+        $("#img4").click(function () {
+            $(this).css("border", "5px solid #ff00ee");
+        });
+
+        $("#img5").mouseover(function () {
+            $(this).attr("src","../images/b_pic1.jpg")
+        });
+        $("#img5").mouseout(function () {
+            $(this).attr("src","../images/b_pic2.jpg")
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+
+<h1>사진들</h1>
+<img alt="성 자비에르 성당(외관)" id="img1" src="../images/img01.jpg">
+<img alt="성 자비에르 성당(내관)" id="img2" src="../images/img02.jpg">
+<img alt="낡은 건물" id="img3" src="../images/img03.jpg">
+<img alt="가로등" id="img4" src="../images/img04.jpg">
+<br/><br/>
+<ol>
+<li>성 자비에르 성당(외관)</li>
+<li>성 자비에르 성당(내관)</li>
+<li>낡은 건물</li>
+<li>가로등</li>
+</ol>
+<script>
+    $(document).ready(function () {
+        $("img").click(function () {
+            find = $(this).attr("alt");
+            alert(find);
+        });
+    });
+
+</script>
+
+</body>
+</html>

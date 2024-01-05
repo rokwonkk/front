@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+입력:<input type="text" id="txt" placeholder="입력">
+<br/><br/>
+<input type="button" id="btn" value="입력완료">
+<script>
+    $(document).ready(function () {
+
+        $("#btn").click(function () {
+
+            // getter
+            let txt = $("#txt").val();
+            alert(txt);
+
+            // setter
+            $("#txt").val("Good Job");
+
+        });
+
+    });
+</script>
+</body>
+</html>

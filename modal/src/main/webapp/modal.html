@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .modal {
+            /*display: block;       //모달의 배경이 보이도록 */
+            display: none;          /* 기본적으로 모달을 숨김*/
+            position: fixed;        /* 위치를 픽스 */
+            z-index: 1;             /* 위에 놓는다 */
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.3);
+
+            /*animation-name: animationtop;   !* 애니메이션이름 *!*/
+            /*animation-duration: 0.4s;       !* 지연시간 *!*/
+        }
+
+        /* 실제 모달 */
+        .modal-contents {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+
+            /* 애니메이션 설정 */
+            position: relative;
+            animation-name: animationtop;   /* 애니메이션이름 */
+            animation-duration: 0.4s;       /* 지연시간 */
+        }
+
+        @keyframes animationtop {
+
+            from { top : -300px; opacity: 0 }
+            to { top : 0; opacity: 1}
+
+        }
+
+        /* close button */
+        .close {
+            color: #aaaaae;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Modal</h2>
+
+<!-- Trigger(촉발하다) -->
+
+<button id="btn">Open Modal</button>
+
+<!-- background -->
+<div id="myModal" class="modal">
+
+    <!-- 실제 모달창 -->
+    <div class="modal-contents">
+        <span class="close">&times;</span>
+        <p>MyModal 입니다.</p>
+    </div>
+
+</div>
+
+<script>
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("btn");
+
+    let span = document.getElementsByClassName('close')[0]; // 모달이 보이도록
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+
+    span.onclick = function () {
+        modal.style.display = "none";   //모달을 감추도록
+    };
+</script>
+
+</body>
+</html>
+<!--
+특수 문자 표 : https://lynmp.com/ko/article/na4022da3d633f943a
+ 		&#32;	여백 (Space)
+!		&#33;	느낌표 (Exclamation mark)
+"		&#34;	큰따옴표 (Quotation mark)
+#		&#35;	샵 (Number sign)
+$		&#36;	달러 (Dollar sign)
+%		&#37;	퍼센트 (Percent sign)
+&	    &amp;	&#38;	앤드 기호 (Ampersand)
+'		&#39;	아포스트로피 (Apostrophe)
+(		&#40;	소괄호/왼쪽 (Opening/Left Parenthesis)
+)		&#41;	소괄호/오른쪽 (Closing/Right Parenthesis)
+*		&#42;	별표 (Asterisk)
++		&#43;	더하기 (Plus sign)
+,		&#44;	쉼표 (Comma)
+-		&#45;	하이픈 (Hyphen)
+.		&#46;	온점, 마침표 (Period)
+/		&#47;	슬래시 (Slash)
+0 ~ 9	&#48; ~ &#57;	숫자 0 ~ 9 (Digit 0 - 9)
+:		&#58;	쌍점, 콜론 (Colon)
+;		&#59;	세미콜론 (Semicolon)
+<	    &lt;	&#60;	보다 작은 (Less than)
+=		&#61;	등호, 같기표 (Equals sign)
+>	    &gt;	&#62;	보다 큰 (Greater than)
+?		&#63;	물음표 (Question mark)
+@		&#64;	앳, 골뱅이 (At sign)
+A ~ Z	&#65; ~ &#90;	대문자 A ~ Z (Uppercase A - Z)
+[		&#91;	대괄호/왼쪽 (Opening/Left square bracket)
+        &#96;	역슬래시, 백슬래시 (Backslash)
+]		&#93;	대괄호/오른쪽 (Closing/Right square bracket)
+^		&#94;	지수 (Caret)
+_		&#95;	언더바 (Underscore)
+`		&#96;	억음부호(^^?) (Grave accent)
+a ~ z	&#97; ~ &#122;	소문자 a ~ z (Lowercase a - z)
+{		&#123;	중괄호/왼쪽 (Opening/Left curly brace)
+|		&#124;	버티컬바, 파이프 (Vertical bar)
+}		&#125;	중괄호/오른쪽 (Closing/Right curly brace)
+~		&#126;	물결표 (Tilde)
+&nbsp;	&#160;	여백 (Non-breaking space)
+¡	    &iexcl;	&#161;	거꾸로 느낌표 (Inverted exclamation mark)
+¢	    &cent;	&#162;	센트 (Cent)
+£	    &pound;	&#163;	파운드 (Pound)
+¤	    &curren;	&#164;	정의되지않은 커런시 표시 (Currency)
+¥	    &yen;	&#165;	엔 (Yen)
+¦	    &brvbar;	&#166;	파이프 (Broken vertical bar)
+§	    &sect;	&#167;	단락기호 (Section)
+©	    &copy;	&#169;	카피라이트 기호 (Copyright)
+®	    &reg;	&#174;	트레이드 마크 기호 (Registered trademark)
+°	    &deg;	&#176;	도 단위기호 (Degree)
+±	    &plusmn;	&#177;	플러스 or 마이너스 (Plus or minus)
+µ	    &micro;	&#181;	마이크로 단위기호 (Micro)
+¼	    &frac14;	&#188;	분수 1/4 (Fraction 1/4)
+½	    &frac12;	&#189;	분수 1/2 (Fraction 1/2)
+¾	    &frac34;	&#190;	분수 3/4 (Fraction 3/4)
+¿	    &iquest;	&#191;	거꾸로 물음표 (Inverted question mark)
+×	    &times;	&#215;	곱하기 부호 (Multiplication)
+÷	    &divide;	&#247;	나누기 부호 (Divide)
+‘	    &lsquo;	&#8216;	왼쪽 작은따옴표 (Left single quotation mark)
+’	    &rsquo;	&#8217;	오른쪽 작은따옴표 (Right single quotation mark)
+‚	    &sbquo;	&#8218;	쉼표 (Single low-9 quotation mark)
+ -->
